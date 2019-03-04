@@ -33,7 +33,7 @@ namespace SportConnect.Core
             Resources.AppResources.Culture = Mvx.IoCProvider.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
 
             RegisterAppStart<ViewModels.MainViewModel>();
-            //RegisterAppStart<ViewModels.RootViewModel>();
+            RegisterAppStart<ViewModels.RootViewModel>();
         }
     }
 }

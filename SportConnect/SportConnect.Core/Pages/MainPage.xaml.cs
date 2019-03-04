@@ -8,7 +8,7 @@ using MvvmCross.Forms.Views;
 
 namespace SportConnect.Core.Pages
 {
-    //[MvxMasterDetailPagePresentation]
+    [MvxMasterDetailPagePresentation]
     public partial class MainPage : MvxContentPage
     {
         public MainPage()
