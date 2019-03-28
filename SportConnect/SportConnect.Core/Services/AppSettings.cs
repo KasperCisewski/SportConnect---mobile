@@ -1,9 +1,4 @@
-﻿// ---------------------------------------------------------------
-// <author>Paul Datsyuk</author>
-// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
-// ---------------------------------------------------------------
-
-using Xamarin.Essentials;
+﻿using Xamarin.Essentials;
 
 namespace SportConnect.Core.Services
 {
