@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace SportConnect.Core.Behaviors
 {
-    public class EventToCommandBehavior : BehaviorBase<View>
+    public class EventToCommandBehavior : BehaviorBase<Xamarin.Forms.View>
     {
         Delegate eventHandler;
 
@@ -43,13 +43,13 @@ namespace SportConnect.Core.Behaviors
             set { SetValue(InputConverterProperty, value); }
         }
 
-        protected override void OnAttachedTo(View bindable)
+        protected override void OnAttachedTo(Xamarin.Forms.View bindable)
         {
             base.OnAttachedTo(bindable);
             RegisterEvent(EventName);
         }
 
-        protected override void OnDetachingFrom(View bindable)
+        protected override void OnDetachingFrom(Xamarin.Forms.View bindable)
         {
             DeregisterEvent(EventName);
             base.OnDetachingFrom(bindable);

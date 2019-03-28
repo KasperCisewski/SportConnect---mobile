@@ -10,19 +10,20 @@ using MvvmCross.ViewModels;
 using SportConnect.Core.Helpers;
 using SportConnect.Core.Services;
 using System.Collections.Generic;
+using SportConnect.Core.Services.Settings;
 
 namespace SportConnect.Core.ViewModels
 {
     public class SecondViewModel : MvxViewModel<Dictionary<string, string>>
     {
         private readonly IMvxNavigationService navigationService;
-        private readonly Services.IAppSettings settings;
+        private readonly IAppSettings settings;
         private readonly IUserDialogs userDialogs;
         private readonly ILocalizeService localizeService;
 
         private Dictionary<string, string> _parameter;
 
-        public SecondViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings, IUserDialogs userDialogs, ILocalizeService localizeService)
+        public SecondViewModel(IMvxNavigationService navigationService, IAppSettings settings, IUserDialogs userDialogs, ILocalizeService localizeService)
         {
             this.navigationService = navigationService;
             this.settings = settings;

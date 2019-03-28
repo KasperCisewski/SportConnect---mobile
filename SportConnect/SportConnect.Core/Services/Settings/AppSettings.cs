@@ -1,6 +1,6 @@
 ﻿using Xamarin.Essentials;
 
-namespace SportConnect.Core.Services
+namespace SportConnect.Core.Services.Settings
 {
     public class AppSettings : IAppSettings
     {

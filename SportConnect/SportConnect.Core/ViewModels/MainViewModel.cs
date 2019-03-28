@@ -10,6 +10,7 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
+using SportConnect.Core.Services.Settings;
 using Xamarin.Essentials;
 
 namespace SportConnect.Core.ViewModels
@@ -18,12 +19,12 @@ namespace SportConnect.Core.ViewModels
     {
         private readonly IMvxNavigationService navigationService;
         private readonly IMvxLogProvider mvxLogProvider;
-        private readonly Services.IAppSettings settings;
+        private readonly IAppSettings settings;
         private readonly IUserDialogs userDialogs;
 
         private readonly IMvxLog log;
 
-        public MainViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider, Services.IAppSettings settings, IUserDialogs userDialogs)
+        public MainViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider, IAppSettings settings, IUserDialogs userDialogs)
         {
             this.navigationService = navigationService;
             this.mvxLogProvider = mvxLogProvider;
@@ -31,6 +32,7 @@ namespace SportConnect.Core.ViewModels
             this.userDialogs = userDialogs;
 
             this.log = mvxLogProvider.GetLogFor(GetType());
+         
 
             ButtonText = Resources.AppResources.MainPageButton;
         }

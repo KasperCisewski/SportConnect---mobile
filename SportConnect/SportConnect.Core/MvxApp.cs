@@ -9,6 +9,7 @@ using MvvmCross.Base;
 using MvvmCross.IoC;
 using MvvmCross.Plugin.Json;
 using MvvmCross.ViewModels;
+using SportConnect.Core.Services.Settings;
 
 namespace SportConnect.Core
 {
@@ -26,14 +27,14 @@ namespace SportConnect.Core
                 .AsTypes()
                 .RegisterAsLazySingleton();
 
-            Mvx.IoCProvider.RegisterType<Services.IAppSettings, Services.AppSettings>();
+            Mvx.IoCProvider.RegisterType<IAppSettings, AppSettings>();
             Mvx.IoCProvider.RegisterType<IMvxJsonConverter, MvxJsonConverter>();
             Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
 
             Resources.AppResources.Culture = Mvx.IoCProvider.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
 
-            RegisterAppStart<ViewModels.MainViewModel>();
-            RegisterAppStart<ViewModels.RootViewModel>();
+            RegisterAppStart<ViewModels.LoginViewModel>();
+           // RegisterAppStart<ViewModels.RootViewModel>();
         }
     }
 }

@@ -55,9 +55,6 @@
         <PackageReference Include="Xamarin.Essentials" Version="0.11.0-preview" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Update="Pages\Examples\MvxContentPage.xaml.cs">
-          <DependentUpon>MvxContentPage.xaml</DependentUpon>
-        </Compile>
         <Compile Update="Resources\AppResources.Designer.cs">
             <DesignTime>True</DesignTime>
             <AutoGen>True</AutoGen>
@@ -65,12 +62,6 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Update="Pages\Examples\MvxContentPage.xaml">
-          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-        </EmbeddedResource>
-        <EmbeddedResource Update="Pages\LoginPage.xaml">
-          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-        </EmbeddedResource>
         <EmbeddedResource Update="Pages\MasterPage.xaml">
           <Generator>MSBuild:Compile</Generator>
         </EmbeddedResource>
@@ -126,14 +117,15 @@
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>AppResources.uk.Designer.cs</LastGenOutput>
         </EmbeddedResource>
+        <EmbeddedResource Update="View\Login\LoginView.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Data\Constant\" />
       <Folder Include="Data\Enums\" />
       <Folder Include="Model\" />
-      <Folder Include="Services\Http\HttpFactory\" />
-      <Folder Include="View\" />
-      <Folder Include="Pages\Login\" />
       <Folder Include="Pages\Register\" />
+      <Folder Include="View\Registration\" />
     </ItemGroup>
 </Project>
