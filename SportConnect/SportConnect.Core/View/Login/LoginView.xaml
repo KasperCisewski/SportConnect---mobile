@@ -2,19 +2,39 @@
 <mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-             x:Class="SportConnect.Core.View.Login.LoginView">
+             x:Class="SportConnect.Core.View.Login.LoginView"
+             BackgroundImage="backgroundEmpty.png">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Your login" VerticalOptions="Start" HorizontalOptions="Start" Margin="10,20,0,0"/>
-                <Entry Text="{Binding Login}" HorizontalOptions="Center"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Your password"/>
-                <Entry Text="{Binding Password}" IsPassword="True"/>
-            </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="1" Grid.Column="1" 
+                         HorizontalOptions="Center" VerticalOptions="Center" >
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Your login"  />
+                    <Entry Text="{Binding Login}" HorizontalOptions= "FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Your password"/>
+                    <Entry Text="{Binding Password}" IsPassword="True" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Remember credentials"/>
+                    <Switch IsToggled="{Binding IsToggled}" />
+                </StackLayout>
 
-            <Button Text="Log into app" Command="{Binding LogInCommand}" HorizontalOptions="Center" />
-        </StackLayout>
+                <Button Text="Log into app" Command="{Binding LogInCommand}" HorizontalOptions="Center" />
+
+                <Button Text="Register now" Command="{Binding GoToRegisterView}" VerticalOptions="End"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </mvx:MvxContentPage>

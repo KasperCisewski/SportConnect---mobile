@@ -10,12 +10,11 @@ using Xamarin.Forms.Xaml;
 
 namespace SportConnect.Core.View.Login
 {
-    [MvxMasterDetailPagePresentation]
     public partial class LoginView : MvxContentPage
     {
-		public LoginView ()
-		{
-			InitializeComponent ();
-		}
-	}
+        public LoginView()
+        {
+            InitializeComponent();
+        }
+    }
 }

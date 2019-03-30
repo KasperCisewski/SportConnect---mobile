@@ -10,6 +10,7 @@ using MvvmCross.IoC;
 using MvvmCross.Plugin.Json;
 using MvvmCross.ViewModels;
 using SportConnect.Core.Services.Settings;
+using SportConnect.Core.ViewModels.Login;
 
 namespace SportConnect.Core
 {
@@ -33,7 +34,7 @@ namespace SportConnect.Core
 
             Resources.AppResources.Culture = Mvx.IoCProvider.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
 
-            RegisterAppStart<ViewModels.LoginViewModel>();
+            RegisterAppStart<LoginViewModel>();
            // RegisterAppStart<ViewModels.RootViewModel>();
         }
     }

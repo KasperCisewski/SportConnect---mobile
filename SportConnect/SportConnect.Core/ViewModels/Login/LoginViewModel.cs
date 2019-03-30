@@ -5,7 +5,7 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using SportConnect.Core.Services.Settings;
 
-namespace SportConnect.Core.ViewModels
+namespace SportConnect.Core.ViewModels.Login
 {
     public class LoginViewModel : MvxViewModel
     {
@@ -28,6 +28,7 @@ namespace SportConnect.Core.ViewModels
 
         public string Login { get; set; }
         public string Password { get; set; }
+        public bool IsToggled { get; set; }
 
         public IMvxAsyncCommand LogInCommand { get; }
 
