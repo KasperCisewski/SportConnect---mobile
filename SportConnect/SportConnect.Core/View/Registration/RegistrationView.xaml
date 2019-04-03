@@ -2,11 +2,8 @@
 <mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-             x:Class="SportConnect.Core.View.Login.LoginView"
-             Title="Sport Connect"
-             >
-    <ContentPage.ToolbarItems>
-    </ContentPage.ToolbarItems>
+             x:Class="SportConnect.Core.View.Registration.RegistrationView"
+             Title="Sport Connect Registration">
     <ContentPage.Content>
         <Grid x:Name="Grid">
             <Grid.ColumnDefinitions>
@@ -21,22 +18,32 @@
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="1" Grid.Column="1" 
                          HorizontalOptions="Center" VerticalOptions="Center" >
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Your email"  />
+                    <Entry Text="{Binding Email}" HorizontalOptions= "FillAndExpand"/>
+                </StackLayout>
+                <Label Text="{Binding EmailNotValidatedMessage}" TextColor="DarkRed" FontSize="Micro" IsVisible="{Binding IsEmailNotValidated}"/>
+
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Your login"  />
-                    <Entry Text="{Binding Login}" HorizontalOptions= "FillAndExpand" />
+                    <Entry Text="{Binding Login}" HorizontalOptions= "FillAndExpand"  />
                 </StackLayout>
+                <Label Text="{Binding LoginNotValidatedMessage}" TextColor="DarkRed" FontSize="Micro" IsVisible="{Binding IsLoginNotValidated}"/>
+
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Your password"/>
                     <Entry Text="{Binding Password}" IsPassword="True" HorizontalOptions="FillAndExpand" />
                 </StackLayout>
+                <Label Text="{Binding PasswordNotValidatedMessage}" TextColor="DarkRed" FontSize="Micro" IsVisible="{Binding IsPasswordNotValidated}"/>
+
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Remember credentials"/>
-                    <Switch IsToggled="{Binding IsToggled}" />
+                    <Label Text="Repeat your password"/>
+                    <Entry Text="{Binding RepeatedPassword}" IsPassword="True" HorizontalOptions="FillAndExpand" TextChanged="{Binding CheckValidationRepeatedPasswordCommand}" />
                 </StackLayout>
+                <Label Text="{Binding SecondPasswordNotValidatedMessage}" TextColor="DarkRed" FontSize="Micro" IsVisible="{Binding IsSecondPasswordNotValidated}"/>
 
-                <Button Text="Log into app" Command="{Binding LogInCommand}" HorizontalOptions="Center" />
-
-                <Button Text="Register now" Command="{Binding GoToRegistrationView}" VerticalOptions="End"/>
+                <Button Text="Register" Command="{Binding RegisterCommand}" HorizontalOptions="Center" />
             </StackLayout>
         </Grid>
     </ContentPage.Content>
