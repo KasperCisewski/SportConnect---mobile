@@ -8,6 +8,11 @@
         <DebugType>pdbonly</DebugType>
     </PropertyGroup>
     <ItemGroup>
+      <Compile Remove="Pages\Register\**" />
+      <EmbeddedResource Remove="Pages\Register\**" />
+      <None Remove="Pages\Register\**" />
+    </ItemGroup>
+    <ItemGroup>
         <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
         <PackageReference Include="Fody" Version="3.2.17" developmentDependency="true" />
         <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.1.2" />
@@ -60,6 +65,11 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>AppResources.resx</DependentUpon>
         </Compile>
+        <Compile Update="Resources\LoginAndRegisterResources\LoginAndRegisterResources.Designer.cs">
+          <DependentUpon>LoginAndRegisterResources.resx</DependentUpon>
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Update="Pages\MasterPage.xaml">
@@ -74,23 +84,11 @@
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Update="Resources\AppResources.en-US.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>AppResources.en-US.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
         <Compile Update="Resources\AppResources.de.Designer.cs">
             <DesignTime>True</DesignTime>
             <AutoGen>True</AutoGen>
             <DependentUpon>AppResources.de.resx</DependentUpon>
         </Compile>
-    </ItemGroup>
-    <ItemGroup>
-        <EmbeddedResource Update="Resources\AppResources.de.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>AppResources.de.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
         <Compile Update="Resources\AppResources.ru.Designer.cs">
@@ -100,12 +98,6 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Update="Resources\AppResources.ru.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>AppResources.ru.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
         <Compile Update="Resources\AppResources.uk.Designer.cs">
             <DesignTime>True</DesignTime>
             <AutoGen>True</AutoGen>
@@ -113,9 +105,9 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Update="Resources\AppResources.uk.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>AppResources.uk.Designer.cs</LastGenOutput>
+        <EmbeddedResource Update="Resources\LoginAndRegisterResources\LoginAndRegisterResources.resx">
+          <LastGenOutput>LoginAndRegisterResources.Designer.cs</LastGenOutput>
+          <Generator>ResXFileCodeGenerator</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="View\Login\LoginView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -128,6 +120,5 @@
       <Folder Include="Data\Constant\" />
       <Folder Include="Data\Enums\" />
       <Folder Include="Model\" />
-      <Folder Include="Pages\Register\" />
     </ItemGroup>
 </Project>

@@ -26,12 +26,11 @@
                 <Setter Property="CornerRadius" Value="17"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
             </Style>
-            <!--<Style TargetType="Switch">
-                <Setter Property="IsToggled" Value="True"/>
-                <Setter Property="FlowDirection" Value="RightToLeft"/>
-            </Style>-->
             <Style TargetType="views:MvxContentPage">
                 <Setter Property="BackgroundColor" Value="Aqua"/>
+            </Style>
+            <Style TargetType="views:IMvxPage">
+                <Setter Property="ContentPage.BackgroundColor" Value="Chocolate"/>
             </Style>
             <Style TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="BlueViolet"></Setter>

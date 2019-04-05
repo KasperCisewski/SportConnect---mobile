@@ -117,13 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MainPageButton" xml:space="preserve">
-    <value>Drück mich</value>
+  <data name="LoginIsTooShort" xml:space="preserve">
+    <value>Login is too short</value>
   </data>
-  <data name="MainPageButtonPressed" xml:space="preserve">
-    <value>Danke!</value>
+  <data name="NotValidEmail" xml:space="preserve">
+    <value>Email must contains @</value>
   </data>
-  <data name="MainPageTitle" xml:space="preserve">
-    <value>Hallo Xamarin!</value>
+  <data name="PasswordIsNotValid" xml:space="preserve">
+    <value>Password must have 6 characters and at least one digit</value>
+  </data>
+  <data name="RepeatedPasswordIsNotAsPassword" xml:space="preserve">
+    <value>Both passwords must be the same</value>
   </data>
 </root>

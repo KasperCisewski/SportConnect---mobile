@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<mvx:MvxContentPage x:TypeArguments="login:LoginViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:login="clr-namespace:SportConnect.Core.ViewModels.Login;assembly=SportConnect.Core"
+             xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
              x:Class="SportConnect.Core.View.Login.LoginView"
              Title="Sport Connect"
+
              >
-    <ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems >
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid x:Name="Grid">
@@ -20,12 +23,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="1" Grid.Column="1" 
-                         HorizontalOptions="Center" VerticalOptions="Center" >
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Your login"  />
+                         HorizontalOptions="Center" VerticalOptions="Center" MinimumWidthRequest="90" >
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{res:Translate EmailName}"  />
                     <Entry Text="{Binding Login}" HorizontalOptions= "FillAndExpand" />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
                     <Label Text="Your password"/>
                     <Entry Text="{Binding Password}" IsPassword="True" HorizontalOptions="FillAndExpand" />
                 </StackLayout>

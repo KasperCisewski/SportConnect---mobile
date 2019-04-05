@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SportConnect.Core.Resources {
+namespace SportConnect.Core.Resources.LoginAndRegisterResources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace SportConnect.Core.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppResources {
+    internal class LoginAndRegisterResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AppResources() {
+        internal LoginAndRegisterResources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace SportConnect.Core.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SportConnect.Core.Resources.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SportConnect.Core.Resources.LoginAndRegisterResources.LoginAndRegisterResources", typeof(LoginAndRegisterResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,47 +61,38 @@ namespace SportConnect.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your email.
+        ///   Looks up a localized string similar to Login is too short.
         /// </summary>
-        internal static string EmailName {
+        internal static string LoginIsTooShort {
             get {
-                return ResourceManager.GetString("EmailName", resourceCulture);
+                return ResourceManager.GetString("LoginIsTooShort", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To Second Page.
+        ///   Looks up a localized string similar to Email must contains @.
         /// </summary>
-        internal static string GoToSecondPageText {
+        internal static string NotValidEmail {
             get {
-                return ResourceManager.GetString("GoToSecondPageText", resourceCulture);
+                return ResourceManager.GetString("NotValidEmail", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Press me.
+        ///   Looks up a localized string similar to Password must have 6 characters and at least one digit.
         /// </summary>
-        internal static string MainPageButton {
+        internal static string PasswordIsNotValid {
             get {
-                return ResourceManager.GetString("MainPageButton", resourceCulture);
+                return ResourceManager.GetString("PasswordIsNotValid", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thank you!.
+        ///   Looks up a localized string similar to Both passwords must be the same.
         /// </summary>
-        internal static string MainPageButtonPressed {
+        internal static string RepeatedPasswordIsNotAsPassword {
             get {
-                return ResourceManager.GetString("MainPageButtonPressed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hello Xamarin!.
-        /// </summary>
-        internal static string MainPageTitle {
-            get {
-                return ResourceManager.GetString("MainPageTitle", resourceCulture);
+                return ResourceManager.GetString("RepeatedPasswordIsNotAsPassword", resourceCulture);
             }
         }
     }
