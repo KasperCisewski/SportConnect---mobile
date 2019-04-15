@@ -25,10 +25,12 @@ namespace SportConnect.Droid
 
         public override void OnCreate()
         {
+            System.Net.ServicePointManager.ServerCertificateValidationCallback += (o, certificate, chain, errors) => true;
             base.OnCreate();
 
             RegisterActivityLifecycleCallbacks(this);
             //A great place to initialize Xamarin.Insights and Dependency Services!
+
         }
 
         public override void OnTerminate()

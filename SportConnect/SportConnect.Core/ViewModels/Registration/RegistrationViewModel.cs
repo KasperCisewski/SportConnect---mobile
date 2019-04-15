@@ -1,9 +1,10 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Acr.UserDialogs;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
+using SportConnect.Core.Resources.LoginAndRegisterResources;
 using SportConnect.Core.Services.Settings;
 using SportConnect.Core.Services.User;
 using SportConnect.Core.ViewModels.Base;
@@ -47,11 +48,11 @@ namespace SportConnect.Core.ViewModels.Registration
         public bool IsSecondPasswordNotValidated { get; set; }
 
         public IMvxAsyncCommand RegisterCommand =>
-            new MvxAsyncCommand(async () => { ValidateAndRegister(); });
+            new MvxAsyncCommand(async () => { await ValidateAndRegister(); });
 
 
 
-        private async void ValidateAndRegister()
+        private async Task ValidateAndRegister()
         {
             if (IsEmailNotValidated &&
                 IsLoginNotValidated &&
@@ -61,44 +62,43 @@ namespace SportConnect.Core.ViewModels.Registration
             }
             else
             {
-                ValidateEmail();
-                ValidateLogin();
-                ValidatePassword();
-                ValidateRepeatedPassword();
+                await ValidateEmail();
+                await ValidateLogin();
+                await ValidatePassword();
+                await ValidateRepeatedPassword();
             }
         }
 
 
-        public void ValidateEmail()
+        public async Task ValidateEmail()
         {
             IsEmailNotValidated = false;
 
             if (Email == null || !Email.Contains("@"))
             {
                 EmailNotValidatedMessage =
-                    Resources.LoginAndRegisterResources.LoginAndRegisterResources.NotValidEmail;
+                    LoginAndRegisterResources.NotValidEmail;
                 IsEmailNotValidated = true;
             }
 
         }
 
-        public void ValidateLogin()
+        public async Task ValidateLogin()
         {
             IsLoginNotValidated = false;
 
             if (Login == null || Login.Length < 3)
             {
                 LoginNotValidatedMessage =
-                    Resources.LoginAndRegisterResources.LoginAndRegisterResources.LoginIsTooShort;
+                    LoginAndRegisterResources.LoginIsTooShort;
                 IsLoginNotValidated = true;
-                return;
             }
 
             // if(_userService.)
 
         }
 
-        public void ValidatePassword()
+        public async Task ValidatePassword()
         {
             IsPasswordNotValidated = false;
 
@@ -107,13 +107,13 @@ namespace SportConnect.Core.ViewModels.Registration
                 Password.Length < 6)
             {
                 PasswordNotValidatedMessage =
-                    Resources.LoginAndRegisterResources.LoginAndRegisterResources.PasswordIsNotValid;
+                    LoginAndRegisterResources.PasswordIsNotValid;
                 IsPasswordNotValidated = true;
             }
             ValidateRepeatedPassword();
         }
 
-        public void ValidateRepeatedPassword()
+        public async Task ValidateRepeatedPassword()
         {
             IsSecondPasswordNotValidated = false;
 
@@ -121,7 +121,7 @@ namespace SportConnect.Core.ViewModels.Registration
                 RepeatedPassword != Password)
             {
                 RepeatedPasswordNotValidatedMessage =
-                    Resources.LoginAndRegisterResources.LoginAndRegisterResources.RepeatedPasswordIsNotAsPassword;
+                    LoginAndRegisterResources.RepeatedPasswordIsNotAsPassword;
                 IsSecondPasswordNotValidated = true;
             }
 

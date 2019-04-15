@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Acr.UserDialogs;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
@@ -35,18 +36,27 @@ namespace SportConnect.Core.ViewModels.Login
         public string Login { get; set; }
         public string Password { get; set; }
         public bool IsToggled { get; set; }
+        public bool IsLoginOrPasswordIsnCorrect { get; set; }
 
-        public IMvxAsyncCommand LogInCommand { get; }
+        public IMvxAsyncCommand LogInCommand =>
+            new MvxAsyncCommand(async () => { await TryToLogIn(); });
 
-        //public IMvxCommand LogInCommand
-        //{
+        private async Task TryToLogIn()
+        {
+            if (Login != null || Password != null)
+            {
+                var result = await _userService.LogIntoApp(Login, Password);
 
-        //        return new MvxCommand(() =>
-        //        {
-        //            ButtonText = Resources.AppResources.MainPageButtonPressed;
-        //        });
+                if (result)
+                {
+                    
+                }
+                else
+                {
 
-        //}
+                }
+            }
+        }
 
         public IMvxAsyncCommand GoToRegistrationView =>
             new MvxAsyncCommand(async () =>

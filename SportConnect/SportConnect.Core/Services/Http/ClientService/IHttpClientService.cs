@@ -7,5 +7,6 @@ namespace SportConnect.Core.Services.Http.ClientService
     {
         Task<HttpResult<T>> ExecuteAsync<T>(IRestRequest request);
         Task<HttpResult<object>> ExecuteAsync(IRestRequest request);
+
     }
 }

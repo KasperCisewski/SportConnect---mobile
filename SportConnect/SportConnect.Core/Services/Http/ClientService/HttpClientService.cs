@@ -55,6 +55,8 @@ namespace SportConnect.Core.Services.Http.ClientService
 
             return response.Data;
         }
+
+
     }
 
     public class HttpResult<T>
