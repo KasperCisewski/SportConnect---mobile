@@ -5,8 +5,10 @@ using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using SportConnect.Core.Resources.LoginAndRegisterResources;
 using SportConnect.Core.Services.Settings;
 using SportConnect.Core.Services.User;
+using SportConnect.Core.ViewModels.MainApplication;
 using SportConnect.Core.ViewModels.Registration;
 
 namespace SportConnect.Core.ViewModels.Login
@@ -37,23 +39,26 @@ namespace SportConnect.Core.ViewModels.Login
         public string Password { get; set; }
         public bool IsToggled { get; set; }
         public bool IsLoginOrPasswordIsnCorrect { get; set; }
+        public string LoginOrPasswordIsnCorrectMessage { get; set; }
 
         public IMvxAsyncCommand LogInCommand =>
             new MvxAsyncCommand(async () => { await TryToLogIn(); });
 
         private async Task TryToLogIn()
         {
+            IsLoginOrPasswordIsnCorrect = false;
             if (Login != null || Password != null)
             {
-                var result = await _userService.LogIntoApp(Login, Password);
+                var result = await _userService.TryToLogIntoApp(Login, Password);
 
                 if (result)
                 {
-                    
+                    await _navigationService.Navigate<MainApplicationViewModel>();
                 }
                 else
                 {
-
+                    IsLoginOrPasswordIsnCorrect = true;
+                    LoginOrPasswordIsnCorrectMessage = LoginAndRegisterResources.LoginOrPasswordIsnMatch;
                 }
             }
         }

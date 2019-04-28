@@ -117,10 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EmailAlreadyIsInApplication" xml:space="preserve">
+    <value>We already have this email in our application</value>
+  </data>
+  <data name="EmailIsTooShort" xml:space="preserve">
+    <value>Email is too short</value>
+  </data>
+  <data name="LoginAlreadyIsInApplication" xml:space="preserve">
+    <value>We already have this login in our application</value>
+  </data>
   <data name="LoginIsTooShort" xml:space="preserve">
     <value>Login is too short</value>
   </data>
-  <data name="NotValidEmail" xml:space="preserve">
+  <data name="LoginOrPasswordIsnMatch" xml:space="preserve">
+    <value>Login or password is not correct</value>
+  </data>
+  <data name="NotValidEmailByNotContainAt" xml:space="preserve">
     <value>Email must contains @</value>
   </data>
   <data name="PasswordIsNotValid" xml:space="preserve">

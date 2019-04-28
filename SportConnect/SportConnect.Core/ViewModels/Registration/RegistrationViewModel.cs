@@ -5,6 +5,7 @@ using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using SportConnect.Core.Resources.LoginAndRegisterResources;
+using SportConnect.Core.Services.Registration;
 using SportConnect.Core.Services.Settings;
 using SportConnect.Core.Services.User;
 using SportConnect.Core.ViewModels.Base;
@@ -18,19 +19,22 @@ namespace SportConnect.Core.ViewModels.Registration
         private readonly IAppSettings _settings;
         private readonly IUserDialogs _userDialogs;
         private readonly UserService _userService;
+        private readonly RegistrationService _registrationService;
 
         public RegistrationViewModel(
             IMvxNavigationService navigationService,
             IMvxLogProvider mvxLogProvider,
             IAppSettings settings,
             IUserDialogs userDialogs,
-            UserService userService)
+            UserService userService,
+            RegistrationService registrationService)
         {
             _navigationService = navigationService;
             _mvxLogProvider = mvxLogProvider;
             _settings = settings;
             _userDialogs = userDialogs;
             _userService = userService;
+            _registrationService = registrationService;
         }
 
         public string Email { get; set; }
@@ -54,11 +58,12 @@ namespace SportConnect.Core.ViewModels.Registration
 
         private async Task ValidateAndRegister()
         {
-            if (IsEmailNotValidated &&
-                IsLoginNotValidated &&
-                IsPasswordNotValidated &&
-                IsSecondPasswordNotValidated)
+            if (!IsEmailNotValidated &&
+                !IsLoginNotValidated &&
+                !IsPasswordNotValidated &&
+                !IsSecondPasswordNotValidated)
             {
+                var isRegistered = await _registrationService.TryToRegisterUserAsync(new RegistrationResponseApiModel(Login, Email, Password));
             }
             else
             {
@@ -70,32 +75,63 @@ namespace SportConnect.Core.ViewModels.Registration
         }
 
 
+
+
         public async Task ValidateEmail()
         {
             IsEmailNotValidated = false;
-
-            if (Email == null || !Email.Contains("@"))
+            if (Email != null)
             {
-                EmailNotValidatedMessage =
-                    LoginAndRegisterResources.NotValidEmail;
-                IsEmailNotValidated = true;
-            }
+                if (!Email.Contains("@"))
+                {
+                    EmailNotValidatedMessage =
+                        LoginAndRegisterResources.NotValidEmailByNotContainAt;
+                    IsEmailNotValidated = true;
+                    return;
+                }
 
+                if (Email.Length < 3)
+                {
+                    EmailNotValidatedMessage =
+                        LoginAndRegisterResources.EmailIsTooShort;
+                    IsEmailNotValidated = true;
+                    return;
+                }
+
+                var result = await _userService.ValidateEmailByCheckIfExistInApp(Email);
+                if (!result)
+                {
+                    EmailNotValidatedMessage =
+                        LoginAndRegisterResources.EmailAlreadyIsInApplication;
+                    IsEmailNotValidated = true;
+                }
+            }
         }
 
         public async Task ValidateLogin()
         {
             IsLoginNotValidated = false;
 
-            if (Login == null || Login.Length < 3)
+            if (Login != null)
             {
-                LoginNotValidatedMessage =
-                    LoginAndRegisterResources.LoginIsTooShort;
-                IsLoginNotValidated = true;
+
+                if (Login.Length < 3)
+                {
+                    LoginNotValidatedMessage =
+                        LoginAndRegisterResources.LoginIsTooShort;
+                    IsLoginNotValidated = true;
+                    return;
+                }
+
+                var result = await _userService.ValidateLoginByCheckIfExistInApp(Login);
+
+                if (!result)
+                {
+                    LoginNotValidatedMessage =
+                        LoginAndRegisterResources.LoginAlreadyIsInApplication;
+                    IsLoginNotValidated = true;
+                }
             }
-
-            // if(_userService.)
-
         }
 
         public async Task ValidatePassword()
@@ -103,14 +139,14 @@ namespace SportConnect.Core.ViewModels.Registration
             IsPasswordNotValidated = false;
 
             if (Password == null ||
-                Password.Any(char.IsDigit) &&
-                Password.Length < 6)
+                (!Password.Any(char.IsDigit) &&
+                Password.Length < 6))
             {
                 PasswordNotValidatedMessage =
                     LoginAndRegisterResources.PasswordIsNotValid;
                 IsPasswordNotValidated = true;
             }
-            ValidateRepeatedPassword();
+            await ValidateRepeatedPassword();
         }
 
         public async Task ValidateRepeatedPassword()
@@ -124,7 +160,6 @@ namespace SportConnect.Core.ViewModels.Registration
                     LoginAndRegisterResources.RepeatedPasswordIsNotAsPassword;
                 IsSecondPasswordNotValidated = true;
             }
-
         }
     }
 }

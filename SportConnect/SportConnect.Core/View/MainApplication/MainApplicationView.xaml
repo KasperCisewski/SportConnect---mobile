@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxTabbedPage x:TypeArguments="mainApplication:MainApplicationViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:login="clr-namespace:SportConnect.Core.ViewModels.Login;assembly=SportConnect.Core"
+             xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
+             xmlns:mainApplication="clr-namespace:SportConnect.Core.ViewModels.MainApplication;assembly=SportConnect.Core"
+             x:Class="SportConnect.Core.View.MainApplication.MainApplicationView"
+             Title="Sport Connect"
+
+             >
+
+    <TabbedPage.Children>
+        <ContentPage Title="1"></ContentPage>
+        <ContentPage Title="2"></ContentPage>
+        <ContentPage Title="3"></ContentPage>
+
+    </TabbedPage.Children>
+</mvx:MvxTabbedPage>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using MvvmCross;
 using SportConnect.Core.Services.Http.ClientService;
 using SportConnect.Core.Services.Http.HttpFactory;
 using SportConnect.Core.Services.Logger;
@@ -14,6 +15,8 @@ namespace SportConnect.Core.Services.User
         private readonly IHttpClientServiceFactory _httpClientServiceFactory;
         private readonly IRestClient _restClient;
 
+        private static readonly string ApiPath = $"{MvxApp.BackendUrl}/api/user/";
+
         public UserService(
             ILoggerService loggerService,
             IHttpClientServiceFactory httpClientServiceFactory,
@@ -24,15 +27,15 @@ namespace SportConnect.Core.Services.User
             _restClient = restClient;
         }
 
-        public async Task<bool> LogIntoApp(string login, string password)
+        public async Task<bool> TryToLogIntoApp(string login, string password)
         {
             try
             {
                 var response = await
-                    _restClient.MakeApiCall<LoginApiModel>($"{MvxApp.BackendUrl}/api/user/signIn?login={login}&password={password}", HttpMethod.Get);
+                    _restClient.MakeApiCall<LoginApiModel>
+                        ($"{ApiPath}signIn?login={login}&password={password}", HttpMethod.Get);
 
                 return response.IsLogged;
-
             }
             catch (Exception e)
             {
@@ -41,6 +44,52 @@ namespace SportConnect.Core.Services.User
 
             return false;
         }
+
+        public async Task<bool> ValidateEmailByCheckIfExistInApp(string email)
+        {
+            try
+            {
+                var response = await
+                    _restClient.MakeApiCall<EmailExistApiModel>
+                        ($"{ApiPath}isEmailExist?email={email}", HttpMethod.Get);
+
+                return response.IsExist;
+            }
+            catch (Exception e)
+            {
+                _loggerService.LogError(e, $"Unhandled expection for email {email}");
+            }
+
+            return false;
+        }
+
+        public async Task<bool> ValidateLoginByCheckIfExistInApp(string login)
+        {
+            try
+            {
+                var response = await
+                    _restClient.MakeApiCall<LoginExistApiModel>
+                        ($"{ApiPath}isLoginExist?email={login}", HttpMethod.Get);
+
+                return response.IsExist;
+            }
+            catch (Exception e)
+            {
+                _loggerService.LogError(e, $"Unhandled expection for email {login}");
+            }
+
+            return false;
+        }
+    }
+
+    public class LoginExistApiModel
+    {
+        public bool IsExist { get; set; }
+    }
+
+    public class EmailExistApiModel
+    {
+        public bool IsExist { get; set; }
     }
 
     public class LoginApiModel

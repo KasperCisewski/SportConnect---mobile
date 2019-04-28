@@ -14,6 +14,7 @@ namespace SportConnect.iOS
     {
         protected override void InitializeFirstChance()
         {
+            System.Net.ServicePointManager.ServerCertificateValidationCallback += (o, certificate, chain, errors) => true;
             base.InitializeFirstChance();
 
             Mvx.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());

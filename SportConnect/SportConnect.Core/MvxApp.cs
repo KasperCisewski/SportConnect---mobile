@@ -13,6 +13,7 @@ using MvvmCross.ViewModels;
 using SportConnect.Core.Services.Http.ClientService;
 using SportConnect.Core.Services.Http.HttpFactory;
 using SportConnect.Core.Services.Logger;
+using SportConnect.Core.Services.Registration;
 using SportConnect.Core.Services.Settings;
 using SportConnect.Core.Services.User;
 using SportConnect.Core.ViewModels.Login;
@@ -40,6 +41,7 @@ namespace SportConnect.Core
             Mvx.IoCProvider.RegisterType<IMvxJsonConverter, MvxJsonConverter>();
             Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
             Mvx.IoCProvider.RegisterType<UserService>();
+            Mvx.IoCProvider.RegisterType<RegistrationService>();
             Mvx.IoCProvider.RegisterType<LoginViewModel>();
             Mvx.IoCProvider.RegisterType<ILoggerService, LoggerService>();
             Mvx.IoCProvider.RegisterType<IPollyPolicyService, PollyPolicyService>();

@@ -25,7 +25,7 @@
             <StackLayout Grid.Row="1" Grid.Column="1" 
                          HorizontalOptions="Center" VerticalOptions="Center" MinimumWidthRequest="90" >
                 <StackLayout Orientation="Vertical">
-                    <Label Text="Your login "  />
+                    <Label Text="Your login "/>
                     <Entry Text="{Binding Login}" HorizontalOptions= "FillAndExpand" />
                 </StackLayout>
                 <StackLayout Orientation="Vertical">

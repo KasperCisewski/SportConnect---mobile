@@ -61,6 +61,33 @@ namespace SportConnect.Core.Resources.LoginAndRegisterResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We already have this email in our application.
+        /// </summary>
+        internal static string EmailAlreadyIsInApplication {
+            get {
+                return ResourceManager.GetString("EmailAlreadyIsInApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email is too short.
+        /// </summary>
+        internal static string EmailIsTooShort {
+            get {
+                return ResourceManager.GetString("EmailIsTooShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We already have this login in our application.
+        /// </summary>
+        internal static string LoginAlreadyIsInApplication {
+            get {
+                return ResourceManager.GetString("LoginAlreadyIsInApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login is too short.
         /// </summary>
         internal static string LoginIsTooShort {
@@ -70,11 +97,20 @@ namespace SportConnect.Core.Resources.LoginAndRegisterResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login or password is not correct.
+        /// </summary>
+        internal static string LoginOrPasswordIsnMatch {
+            get {
+                return ResourceManager.GetString("LoginOrPasswordIsnMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email must contains @.
         /// </summary>
-        internal static string NotValidEmail {
+        internal static string NotValidEmailByNotContainAt {
             get {
-                return ResourceManager.GetString("NotValidEmail", resourceCulture);
+                return ResourceManager.GetString("NotValidEmailByNotContainAt", resourceCulture);
             }
         }
         

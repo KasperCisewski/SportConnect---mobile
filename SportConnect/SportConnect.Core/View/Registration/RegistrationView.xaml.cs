@@ -1,4 +1,5 @@
-﻿using MvvmCross.Forms.Views;
+﻿using System.Threading.Tasks;
+using MvvmCross.Forms.Views;
 using SportConnect.Core.ViewModels.Registration;
 using Xamarin.Forms;
 
@@ -9,27 +10,26 @@ namespace SportConnect.Core.View.Registration
         public RegistrationView()
         {
             InitializeComponent();
-
         }
 
-        private void EmailOnTextChanged(object sender, TextChangedEventArgs e)
+        private async void EmailOnTextChanged(object sender, TextChangedEventArgs e)
         {
-            ViewModel.ValidateEmail();
+            await ViewModel.ValidateEmail();
         }
 
-        private void LoginOnTextChanged(object sender, TextChangedEventArgs e)
+        private async void LoginOnTextChanged(object sender, TextChangedEventArgs e)
         {
-            ViewModel.ValidateLogin();
+            await ViewModel.ValidateLogin();
         }
 
-        private void PasswordOnTextChanged(object sender, TextChangedEventArgs e)
+        private async void PasswordOnTextChanged(object sender, TextChangedEventArgs e)
         {
-            ViewModel.ValidatePassword();
+            await ViewModel.ValidatePassword();
         }
 
-        private void RepeatedPasswordOnTextChanged(object sender, TextChangedEventArgs e)
+        private async void RepeatedPasswordOnTextChanged(object sender, TextChangedEventArgs e)
         {
-            ViewModel.ValidateRepeatedPassword();
+            await ViewModel.ValidateRepeatedPassword();
         }
     }
 }
