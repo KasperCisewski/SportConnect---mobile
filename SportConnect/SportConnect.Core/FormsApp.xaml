@@ -30,6 +30,10 @@
                 <Setter Property="BackgroundColor" Value="ForestGreen"/>
                 <!--<Setter Property="BackgroundImage" Value="backgroundEmpty.png"/>-->
             </Style>
+            <Style TargetType="views:MvxTabbedPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="ForestGreen"/>
+                <Setter Property="BarBackgroundColor" Value="DarkRed"/>
+            </Style>
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="BlueViolet"></Setter>

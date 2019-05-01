@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using MvvmCross.Forms.Views;
+using SportConnect.Core.ViewModels.MainApplications.Normal.SettingsModule;
 
 namespace SportConnect.Core.View.MainApplications.Normal.SettingsModule
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SettingsModuleView : ContentPage
+    public partial class SettingsModuleView : MvxContentPage<SettingsModuleViewModel>
     {
         public SettingsModuleView()
         {

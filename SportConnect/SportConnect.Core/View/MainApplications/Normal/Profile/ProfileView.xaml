@@ -1,0 +1,14 @@
+﻿<mvx:MvxContentPage x:TypeArguments="profile:ProfileViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:profile="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.Profile;assembly=SportConnect.Core"
+             xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
+             x:Class="SportConnect.Core.View.MainApplications.Normal.Profile.ProfileView"
+             Title="Profile"
+             >
+    <ContentPage.ToolbarItems >
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+    </ContentPage.Content>
+</mvx:MvxContentPage>

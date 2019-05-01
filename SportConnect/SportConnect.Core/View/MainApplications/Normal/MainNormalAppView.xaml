@@ -4,7 +4,8 @@
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
              xmlns:main="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal;assembly=SportConnect.Core"
-             xmlns:normalViews="clr-namespace:SportConnect.Core.View.MainApplications.Normal;assembly=SportConnect.Core"
+             xmlns:sportevents="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents"
+             xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile"
              x:Class="SportConnect.Core.View.MainApplications.Normal.MainNormalAppView"
              Title="Sport Connect"
              >
@@ -13,5 +14,7 @@
     </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
 
+        <sportevents:SportEventsView/>
+        <profile:ProfileView/>
     </TabbedPage.Children>
 </mvx:MvxTabbedPage>

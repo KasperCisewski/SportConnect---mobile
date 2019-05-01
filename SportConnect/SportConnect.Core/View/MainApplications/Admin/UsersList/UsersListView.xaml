@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage x:TypeArguments="usersList:UsersListViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:usersList="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin.UsersList;assembly=SportConnect.Core"
+             x:Class="SportConnect.Core.View.MainApplications.Admin.UsersList.UsersListView"
+             Title="Users List"
+                    >
+    <ContentPage.ToolbarItems >
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+    </ContentPage.Content>
+</mvx:MvxContentPage>

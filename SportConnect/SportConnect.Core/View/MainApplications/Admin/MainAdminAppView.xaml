@@ -4,15 +4,19 @@
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
              xmlns:main="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin;assembly=SportConnect.Core"
-             xmlns:normalViews="clr-namespace:SportConnect.Core.View.MainApplications.Normal;assembly=SportConnect.Core"
-             xmlns:adminViews="clr-namespace:SportConnect.Core.View.MainApplications.Admin;assembly=SportConnect.Core"                 
-             x:Class="SportConnect.Core.View.MainApplications.Admin.MainAdminAppView"
-             Title="Sport Connect"
-             >
+                   xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile"
+                   xmlns:sportevents="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents"
+                   xmlns:userslist="clr-namespace:SportConnect.Core.View.MainApplications.Admin.UsersList"
+                   x:Class="SportConnect.Core.View.MainApplications.Admin.MainAdminAppView"
+             Title="Sport Connect Admin" 
+                   >
     <TabbedPage.ToolbarItems>
-        
+
     </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
-        
+        <sportevents:SportEventsView/>
+        <profile:ProfileView/>
+        <userslist:UsersListView/>
     </TabbedPage.Children>
+  
 </mvx:MvxTabbedPage>

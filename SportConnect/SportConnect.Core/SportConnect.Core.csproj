@@ -108,19 +108,19 @@
         <EmbeddedResource Update="View\MainApplications\Admin\MainAdminAppView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
-        <EmbeddedResource Update="View\MainApplications\Admin\UsersListView\UsersListView.xaml">
+        <EmbeddedResource Update="View\MainApplications\Admin\UsersList\UsersListView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="View\MainApplications\Normal\MainNormalAppView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
-        <EmbeddedResource Update="View\MainApplications\Normal\ProfileView\ProfileView.xaml">
+        <EmbeddedResource Update="View\MainApplications\Normal\Profile\ProfileView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="View\MainApplications\Normal\SettingsModule\SettingsModuleView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
-        <EmbeddedResource Update="View\MainApplications\Normal\SportEvents\SportsEventsView.xaml">
+        <EmbeddedResource Update="View\MainApplications\Normal\SportEvents\SportEventsView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
     </ItemGroup>
