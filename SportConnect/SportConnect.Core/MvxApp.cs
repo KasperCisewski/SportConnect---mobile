@@ -5,6 +5,8 @@ using MvvmCross.IoC;
 using MvvmCross.Logging;
 using MvvmCross.Plugin.Json;
 using MvvmCross.ViewModels;
+using SportConnect.Core.Repository.Abstraction;
+using SportConnect.Core.Repository.Implementation;
 using SportConnect.Core.Services.Logger;
 using SportConnect.Core.Services.Registration;
 using SportConnect.Core.Services.Settings;
@@ -38,9 +40,7 @@ namespace SportConnect.Core
             Mvx.IoCProvider.RegisterType<IAppSettings, AppSettings>();
             Mvx.IoCProvider.RegisterType<IMvxJsonConverter, MvxJsonConverter>();
             Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
-
-
-
+            Mvx.IoCProvider.RegisterType<UserRepository>();
             Mvx.IoCProvider.RegisterType<UserService>();
             Mvx.IoCProvider.RegisterType<RegistrationService>();
             Mvx.IoCProvider.RegisterType<BaseViewModel>();

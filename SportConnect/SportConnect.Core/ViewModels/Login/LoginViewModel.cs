@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Acr.UserDialogs;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
-using SportConnect.Core.Model.Settings;
+using SportConnect.Core.Repository.Abstraction;
+using SportConnect.Core.Repository.Implementation;
 using SportConnect.Core.Resources.LoginAndRegisterResources;
 using SportConnect.Core.Services.Settings;
 using SportConnect.Core.Services.User;
@@ -14,7 +12,6 @@ using SportConnect.Core.Services.ViewHistory;
 using SportConnect.Core.ViewModels.Base;
 using SportConnect.Core.ViewModels.MainApplication;
 using SportConnect.Core.ViewModels.Registration;
-using Xamarin.Forms;
 
 namespace SportConnect.Core.ViewModels.Login
 {
@@ -25,6 +22,7 @@ namespace SportConnect.Core.ViewModels.Login
         private readonly IAppSettings _settings;
         private readonly IUserDialogs _userDialogs;
         private readonly UserService _userService;
+        private readonly UserRepository _userRepository;
         private readonly IViewHistoryService _viewHistoryService;
 
         public LoginViewModel(
@@ -33,22 +31,25 @@ namespace SportConnect.Core.ViewModels.Login
             IAppSettings settings,
             IUserDialogs userDialogs,
             IViewHistoryService viewHistoryService,
-            UserService userService)
+            UserService userService,
+            UserRepository userRepository)
         {
             _navigationService = navigationService;
             _mvxLogProvider = mvxLogProvider;
             _settings = settings;
             _userDialogs = userDialogs;
             _userService = userService;
+            _userRepository = userRepository;
             _viewHistoryService = viewHistoryService;
         }
         public override void Prepare()
         {
-            //var loginSettings = _settings.GetLoginSettings();
-
-            //Login = loginSettings.Login;
-            //Password = loginSettings.Password;
-            //RememberCredentials = true;
+            var loginCredentialModel = _userRepository.GetUserCredentials();
+            if (loginCredentialModel != null)
+            {
+                Login = loginCredentialModel.Login;
+                Password = loginCredentialModel.Password;
+            }
             base.Prepare();
         }
 
@@ -72,11 +73,11 @@ namespace SportConnect.Core.ViewModels.Login
                 {
                     if (RememberCredentials)
                     {
-                        //_settings.SaveLoginSettings(new LoginSettingsModel
-                        //{
-                        //    Login = this.Login,
-                        //    Password = this.Password
-                        //});
+                        _userRepository.SaveCredentials(new Model.Credentials.LoginCredentialsModel
+                        {
+                            Login = Login,
+                            Password = Password
+                        });
                     }
 
                     await ShowViewModelAndRemoveHistoryAsync<MainApplicationViewModel>();

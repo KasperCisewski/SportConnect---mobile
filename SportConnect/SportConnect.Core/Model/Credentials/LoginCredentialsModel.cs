@@ -1,6 +1,6 @@
-﻿namespace SportConnect.Core.Model.Settings
+﻿namespace SportConnect.Core.Model.Credentials
 {
-    public class LoginSettingsModel
+    public class LoginCredentialsModel
     {
         public string Login { get; set; }
         public string Password { get; set; }
