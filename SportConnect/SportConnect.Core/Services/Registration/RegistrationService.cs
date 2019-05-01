@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using SportConnect.Core.Services.Http.HttpFactory;
 using SportConnect.Core.Services.Logger;
 using SportConnect.Core.Services.Rest.Interfaces;
 
@@ -12,18 +9,15 @@ namespace SportConnect.Core.Services.Registration
     public class RegistrationService
     {
         private readonly ILoggerService _loggerService;
-        private readonly IHttpClientServiceFactory _httpClientServiceFactory;
         private readonly IRestClient _restClient;
 
         private static readonly string ApiPath = $"{MvxApp.BackendUrl}/api/registration/";
 
         public RegistrationService(
             ILoggerService loggerService,
-            IHttpClientServiceFactory httpClientServiceFactory,
             IRestClient restClient)
         {
             _loggerService = loggerService;
-            _httpClientServiceFactory = httpClientServiceFactory;
             _restClient = restClient;
         }
 

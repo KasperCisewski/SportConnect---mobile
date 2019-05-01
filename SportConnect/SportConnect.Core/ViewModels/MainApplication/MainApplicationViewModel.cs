@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 using SportConnect.Core.Services.Settings;
 using SportConnect.Core.Services.User;
+using SportConnect.Core.ViewModels.Base;
 
 namespace SportConnect.Core.ViewModels.MainApplication
 {
-    public class MainApplicationViewModel : MvxViewModel
+    public class MainApplicationViewModel : BaseViewModel
     {
 
         private readonly IMvxLogProvider _mvxLogProvider;

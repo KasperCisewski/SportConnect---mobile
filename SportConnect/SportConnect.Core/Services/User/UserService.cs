@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using MvvmCross;
-using SportConnect.Core.Services.Http.ClientService;
-using SportConnect.Core.Services.Http.HttpFactory;
 using SportConnect.Core.Services.Logger;
 using SportConnect.Core.Services.Rest.Interfaces;
 
@@ -12,18 +9,15 @@ namespace SportConnect.Core.Services.User
     public class UserService
     {
         private readonly ILoggerService _loggerService;
-        private readonly IHttpClientServiceFactory _httpClientServiceFactory;
         private readonly IRestClient _restClient;
 
         private static readonly string ApiPath = $"{MvxApp.BackendUrl}/api/user/";
 
         public UserService(
             ILoggerService loggerService,
-            IHttpClientServiceFactory httpClientServiceFactory,
                 IRestClient restClient)
         {
             _loggerService = loggerService;
-            _httpClientServiceFactory = httpClientServiceFactory;
             _restClient = restClient;
         }
 
@@ -69,7 +63,7 @@ namespace SportConnect.Core.Services.User
             {
                 var response = await
                     _restClient.MakeApiCall<LoginExistApiModel>
-                        ($"{ApiPath}isLoginExist?email={login}", HttpMethod.Get);
+                        ($"{ApiPath}isLoginExist?login={login}", HttpMethod.Get);
 
                 return response.IsExist;
             }

@@ -26,6 +26,7 @@
         <PackageReference Include="PropertyChanged.Fody" Version="2.5.13" developmentDependency="true" />
         <PackageReference Include="RestSharp" Version="106.6.9" />
         <PackageReference Include="runtime.native.System" Version="4.3.1" />
+        <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
         <PackageReference Include="System.Collections" Version="4.3.0" />
         <PackageReference Include="System.Collections.Concurrent" Version="4.3.0" />
         <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
@@ -122,6 +123,9 @@
     <ItemGroup>
       <Folder Include="Data\Constant\" />
       <Folder Include="Data\Enums\" />
-      <Folder Include="Model\" />
+      <Folder Include="View\AdminPages\UsersView\" />
+      <Folder Include="View\ProfileView\" />
+      <Folder Include="View\SportEvents\" />
+      <Folder Include="View\SettingsModule\" />
     </ItemGroup>
 </Project>

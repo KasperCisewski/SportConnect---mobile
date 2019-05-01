@@ -6,7 +6,6 @@
              xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
              x:Class="SportConnect.Core.View.Login.LoginView"
              Title="Sport Connect"
-
              >
     <ContentPage.ToolbarItems >
     </ContentPage.ToolbarItems>
@@ -35,7 +34,7 @@
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Remember credentials"/>
-                    <Switch IsToggled="{Binding IsToggled}" />
+                    <Switch IsToggled="{Binding RememberCredentials}" />
                 </StackLayout>
 
                 <Label Text="Wrong login and password" TextColor="DarkRed" FontSize="Micro" IsVisible="{Binding IsLoginOrPasswordIsnCorrect}"/>
