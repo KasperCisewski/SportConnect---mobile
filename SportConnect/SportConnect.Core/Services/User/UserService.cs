@@ -21,7 +21,7 @@ namespace SportConnect.Core.Services.User
             _restClient = restClient;
         }
 
-        public async Task<bool> TryToLogIntoApp(string login, string password)
+        public async Task<LoginApiModel> TryToLogIntoApp(string login, string password)
         {
             try
             {
@@ -29,14 +29,14 @@ namespace SportConnect.Core.Services.User
                     _restClient.MakeApiCall<LoginApiModel>
                         ($"{ApiPath}signIn?login={login}&password={password}", HttpMethod.Get);
 
-                return response.IsLogged;
+                return response;
             }
             catch (Exception e)
             {
                 _loggerService.LogError(e, $"Wrong error or password for login {login} and password {password} ");
             }
 
-            return false;
+            return new LoginApiModel();
         }
 
         public async Task<bool> ValidateEmailByCheckIfExistInApp(string email)
@@ -88,6 +88,7 @@ namespace SportConnect.Core.Services.User
 
     public class LoginApiModel
     {
-        public bool IsLogged { get; set; }
+        public bool IsSuccess { get; set; }
+        public int UserRoleId { get; set; }
     }
 }

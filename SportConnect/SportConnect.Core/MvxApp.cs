@@ -13,7 +13,7 @@ using SportConnect.Core.Services.Settings;
 using SportConnect.Core.Services.User;
 using SportConnect.Core.Services.ViewHistory;
 using SportConnect.Core.ViewModels.Base;
-using SportConnect.Core.ViewModels.Login;
+using SportConnect.Core.ViewModels.LoginAndRegistration.Login;
 using Xamarin.Essentials;
 using IRestClient = SportConnect.Core.Services.Rest.Interfaces.IRestClient;
 using RestClient = SportConnect.Core.Services.Rest.Implementations.RestClient;

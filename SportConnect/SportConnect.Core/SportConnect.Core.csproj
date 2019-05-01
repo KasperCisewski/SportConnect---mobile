@@ -8,11 +8,6 @@
         <DebugType>pdbonly</DebugType>
     </PropertyGroup>
     <ItemGroup>
-      <Compile Remove="Pages\Register\**" />
-      <EmbeddedResource Remove="Pages\Register\**" />
-      <None Remove="Pages\Register\**" />
-    </ItemGroup>
-    <ItemGroup>
         <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
         <PackageReference Include="Fody" Version="3.2.17" developmentDependency="true" />
         <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.1.2" />
@@ -73,12 +68,6 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Update="Pages\MasterPage.xaml">
-          <Generator>MSBuild:Compile</Generator>
-        </EmbeddedResource>
-        <EmbeddedResource Update="Pages\RootPage.xaml">
-          <Generator>MSBuild:Compile</Generator>
-        </EmbeddedResource>
         <EmbeddedResource Update="Resources\AppResources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
@@ -110,22 +99,32 @@
           <LastGenOutput>LoginAndRegisterResources.Designer.cs</LastGenOutput>
           <Generator>ResXFileCodeGenerator</Generator>
         </EmbeddedResource>
-        <EmbeddedResource Update="View\Login\LoginView.xaml">
+        <EmbeddedResource Update="View\LoginAndRegistration\Login\LoginView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
-        <EmbeddedResource Update="View\MainApplication\MainApplicationView.xaml">
+        <EmbeddedResource Update="View\LoginAndRegistration\Registration\RegistrationView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
-        <EmbeddedResource Update="View\Registration\RegistrationView.xaml">
+        <EmbeddedResource Update="View\MainApplications\Admin\MainAdminAppView.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="View\MainApplications\Admin\UsersListView\UsersListView.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="View\MainApplications\Normal\MainNormalAppView.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="View\MainApplications\Normal\ProfileView\ProfileView.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="View\MainApplications\Normal\SettingsModule\SettingsModuleView.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="View\MainApplications\Normal\SportEvents\SportsEventsView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Data\Constant\" />
-      <Folder Include="Data\Enums\" />
-      <Folder Include="View\AdminPages\UsersView\" />
-      <Folder Include="View\ProfileView\" />
-      <Folder Include="View\SportEvents\" />
-      <Folder Include="View\SettingsModule\" />
     </ItemGroup>
 </Project>

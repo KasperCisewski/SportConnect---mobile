@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage x:TypeArguments="login:LoginViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:login="clr-namespace:SportConnect.Core.ViewModels.LoginAndRegistration.Login;assembly=SportConnect.Core"
+             xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
+             x:Class="SportConnect.Core.View.LoginAndRegistration.Login.LoginView"
+             Title="Sport Connect"
+             >
+    <ContentPage.ToolbarItems >
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid x:Name="Grid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="1" Grid.Column="1" 
+                         HorizontalOptions="Center" VerticalOptions="Center" MinimumWidthRequest="90" >
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Your login "/>
+                    <Entry Text="{Binding Login}" HorizontalOptions= "FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Your password"/>
+                    <Entry Text="{Binding Password}" IsPassword="True" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Remember credentials"/>
+                    <Switch IsToggled="{Binding RememberCredentials}" />
+                </StackLayout>
+
+                <Label Text="Wrong login and password" TextColor="DarkRed" FontSize="Micro" IsVisible="{Binding IsLoginOrPasswordIsnCorrect}"/>
+
+                <Button Text="Log into app" Command="{Binding LogInCommand}" HorizontalOptions="Center" />
+
+                <Button Text="Register now" Command="{Binding GoToRegistrationView}" VerticalOptions="End"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</mvx:MvxContentPage>
