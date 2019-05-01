@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<mvx:MvxTabbedPage x:TypeArguments="main:MainAdminAppViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SportConnect.Core.View.MainApplications.Admin.MainAdminAppView">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
+             xmlns:main="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin;assembly=SportConnect.Core"
+             xmlns:normalViews="clr-namespace:SportConnect.Core.View.MainApplications.Normal;assembly=SportConnect.Core"
+             xmlns:adminViews="clr-namespace:SportConnect.Core.View.MainApplications.Admin;assembly=SportConnect.Core"                 
+             x:Class="SportConnect.Core.View.MainApplications.Admin.MainAdminAppView"
+             Title="Sport Connect"
+             >
+    <TabbedPage.ToolbarItems>
+        
+    </TabbedPage.ToolbarItems>
+    <TabbedPage.Children>
+        
+    </TabbedPage.Children>
+</mvx:MvxTabbedPage>
