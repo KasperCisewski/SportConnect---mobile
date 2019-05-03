@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using SportConnect.Core.Services.Logger;
 using SportConnect.Core.Services.Rest.Interfaces;
 
@@ -10,15 +11,17 @@ namespace SportConnect.Core.Services.User
     {
         private readonly ILoggerService _loggerService;
         private readonly IRestClient _restClient;
-
+        private readonly IUserDialogs _userDialogs;
         private static readonly string ApiPath = $"{MvxApp.BackendUrl}/api/user/";
 
         public UserService(
             ILoggerService loggerService,
-                IRestClient restClient)
+                IRestClient restClient,
+                IUserDialogs userDialogs)
         {
             _loggerService = loggerService;
             _restClient = restClient;
+            _userDialogs = userDialogs;
         }
 
         public async Task<LoginApiModel> TryToLogIntoApp(string login, string password)

@@ -31,6 +31,7 @@
                 <!--<Setter Property="BackgroundImage" Value="backgroundEmpty.png"/>-->
             </Style>
             <Style TargetType="views:MvxTabbedPage" ApplyToDerivedTypes="True">
+                <Setter Property="NavigationPage.HasBackButton" Value="False"/>
                 <Setter Property="BackgroundColor" Value="ForestGreen"/>
                 <Setter Property="BarBackgroundColor" Value="DarkRed"/>
             </Style>

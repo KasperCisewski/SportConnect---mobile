@@ -1,7 +1,4 @@
-﻿
-using Android.App;
-using SportConnect.Core.Services.ViewHistory;
-using MvvmCross.Droid.Support.V7.AppCompat;
+﻿using SportConnect.Core.Services.ViewHistory;
 using MvvmCross.Platforms.Android;
 using MvvmCross;
 using SportConnect.Core.Services.Logger;
@@ -24,12 +21,7 @@ namespace SportConnect.Droid.Services
 
             if (context is MvxFormsAppCompatActivity compatContext)
             {
-               
-                //compatContext.FinishActivity();
-                compatContext.SupportFragmentManager.ExecutePendingTransactions();
-                compatContext.SupportFragmentManager.PopBackStackImmediate(null, (int)PopBackStackFlags.Inclusive);
-                //compatContext.Finish();
-                //compatContext.OnBackPressed(
+             
             }
             else
             {

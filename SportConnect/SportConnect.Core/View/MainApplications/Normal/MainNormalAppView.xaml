@@ -8,7 +8,9 @@
              xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile"
              x:Class="SportConnect.Core.View.MainApplications.Normal.MainNormalAppView"
              Title="Sport Connect"
+
              >
+           
     <TabbedPage.ToolbarItems>
 
     </TabbedPage.ToolbarItems>

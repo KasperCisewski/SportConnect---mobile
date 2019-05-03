@@ -16,7 +16,7 @@ using SportConnect.Core.ViewModels.MainApplications.Normal;
 
 namespace SportConnect.Core.ViewModels.LoginAndRegistration.Login
 {
-    public class LoginViewModel : BaseViewModel
+    public class LoginViewModel : BaseViewModel//, IMvxPageViewModel
     {
         private readonly IMvxNavigationService _navigationService;
         private readonly IMvxLogProvider _mvxLogProvider;
@@ -42,6 +42,7 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Login
             _userService = userService;
             _userRepository = userRepository;
             _viewHistoryService = viewHistoryService;
+
         }
         public override void Prepare()
         {
@@ -105,6 +106,21 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Login
             _viewHistoryService.ClearHistory();
             await _navigationService.Navigate<T>();
         }
+
+        //public IMvxPagedViewModel GetDefaultViewModel()
+        //{
+        //    throw new System.NotImplementedException();
+        //}
+
+        //public IMvxPagedViewModel GetNextViewModel(IMvxPagedViewModel currentViewModel)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
+
+        //public IMvxPagedViewModel GetPreviousViewModel(IMvxPagedViewModel currentViewModel)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
         public IMvxAsyncCommand GoToRegistrationView =>
             new MvxAsyncCommand(async () =>

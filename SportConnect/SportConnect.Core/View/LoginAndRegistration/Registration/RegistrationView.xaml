@@ -4,8 +4,7 @@
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:registration="clr-namespace:SportConnect.Core.ViewModels.LoginAndRegistration.Registration;assembly=SportConnect.Core"
              xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
-             x:Class="SportConnect.Core.View.LoginAndRegistration.Registration.RegistrationView"  
-             
+             x:Class="SportConnect.Core.View.LoginAndRegistration.Registration.RegistrationView" 
              >
     <ContentPage.ToolbarItems>
     </ContentPage.ToolbarItems>

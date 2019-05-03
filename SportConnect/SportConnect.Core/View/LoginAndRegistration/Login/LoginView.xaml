@@ -6,8 +6,16 @@
              xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
              x:Class="SportConnect.Core.View.LoginAndRegistration.Login.LoginView"
              Title="Sport Connect"
+                     NavigationPage.HasBackButton="False"
+                   NavigationPage.HasNavigationBar="False"
              >
     <ContentPage.ToolbarItems >
+        <ToolbarItem
+            Icon="logout.png"
+            Text="Settings"
+            Priority="0"
+            Order="Primary"
+      />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid x:Name="Grid">

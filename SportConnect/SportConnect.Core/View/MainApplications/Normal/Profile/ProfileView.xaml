@@ -5,8 +5,11 @@
              xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
              x:Class="SportConnect.Core.View.MainApplications.Normal.Profile.ProfileView"
              Title="Profile"
+
              >
     <ContentPage.ToolbarItems >
+
+ 
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
