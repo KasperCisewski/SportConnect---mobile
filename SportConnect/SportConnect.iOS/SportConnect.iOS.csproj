@@ -109,6 +109,11 @@
     <BundleResource Include="Resources\ic_menu_white%401x.png" />
     <BundleResource Include="Resources\ic_menu_white%402x.png" />
     <BundleResource Include="Resources\ic_menu_white%403x.png" />
+    <BundleResource Include="Resources\logout.png" />
+    <BundleResource Include="Resources\profileIcon.png" />
+    <BundleResource Include="Resources\eventIcon.png" />
+    <BundleResource Include="Resources\usersIcon.png" />
+    <BundleResource Include="Resources\settingsIcon.png" />
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>

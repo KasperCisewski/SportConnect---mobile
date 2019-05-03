@@ -16,9 +16,8 @@ using SportConnect.Core.ViewModels.MainApplications.Normal;
 
 namespace SportConnect.Core.ViewModels.LoginAndRegistration.Login
 {
-    public class LoginViewModel : BaseViewModel//, IMvxPageViewModel
+    public class LoginViewModel : BaseViewModel
     {
-        private readonly IMvxNavigationService _navigationService;
         private readonly IMvxLogProvider _mvxLogProvider;
         private readonly IAppSettings _settings;
         private readonly IUserDialogs _userDialogs;
@@ -33,9 +32,8 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Login
             IUserDialogs userDialogs,
             IViewHistoryService viewHistoryService,
             UserService userService,
-            UserRepository userRepository)
+            UserRepository userRepository) : base(navigationService)
         {
-            _navigationService = navigationService;
             _mvxLogProvider = mvxLogProvider;
             _settings = settings;
             _userDialogs = userDialogs;

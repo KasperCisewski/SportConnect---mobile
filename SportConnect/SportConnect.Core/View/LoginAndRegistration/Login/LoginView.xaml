@@ -11,11 +11,12 @@
              >
     <ContentPage.ToolbarItems >
         <ToolbarItem
-            Icon="logout.png"
-            Text="Settings"
-            Priority="0"
-            Order="Primary"
-      />
+           Icon="settingsIcon.png"
+           Text="Settings"
+           Priority="0"
+           Order="Primary"
+           Command="{Binding ShowSettingsModule}"
+        />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid x:Name="Grid">

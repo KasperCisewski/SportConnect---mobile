@@ -9,12 +9,12 @@ using SportConnect.Core.Resources.LoginAndRegisterResources;
 using SportConnect.Core.Services.Registration;
 using SportConnect.Core.Services.Settings;
 using SportConnect.Core.Services.User;
+using SportConnect.Core.ViewModels.Base;
 
 namespace SportConnect.Core.ViewModels.LoginAndRegistration.Registration
 {
-    public class RegistrationViewModel : MvxViewModel
+    public class RegistrationViewModel : BaseViewModel
     {
-        private readonly IMvxNavigationService _navigationService;
         private readonly IMvxLogProvider _mvxLogProvider;
         private readonly IAppSettings _settings;
         private readonly IUserDialogs _userDialogs;
@@ -27,9 +27,8 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Registration
             IAppSettings settings,
             IUserDialogs userDialogs,
             UserService userService,
-            RegistrationService registrationService)
+            RegistrationService registrationService) : base(navigationService)
         {
-            _navigationService = navigationService;
             _mvxLogProvider = mvxLogProvider;
             _settings = settings;
             _userDialogs = userDialogs;

@@ -9,28 +9,29 @@
                    xmlns:sportevents="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents"
                    xmlns:userslist="clr-namespace:SportConnect.Core.View.MainApplications.Admin.UsersList"
                    x:Class="SportConnect.Core.View.MainApplications.Admin.MainAdminAppView"
-             Title="Sport Connect Admin" 
+                   Title="Sport Connect Admin" 
+                   android:TabbedPage.ToolbarPlacement="Bottom"                 
                    >
     <TabbedPage.ToolbarItems>
-
-
         <ToolbarItem
-            Icon="logout.png"
+            Icon="settingsIcon.png"
             Text="Settings"
             Priority="0"
             Order="Primary"
-      />
+            Command="{Binding ShowSettingsModule}"
+        />
         <ToolbarItem
             Icon="logout.png"
             Text="Logout"
             Priority="1"
             Order="Primary"
-      />
+            Command="{Binding LogoutFromApp}"
+          />
     </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
-        <sportevents:SportEventsView/>
-        <profile:ProfileView/>
-        <userslist:UsersListView/>
+        <sportevents:SportEventsView Icon="eventIcon"/>
+        <profile:ProfileView Icon="profileIcon.png"/>
+        <userslist:UsersListView Icon="usersIcon.png"/>
     </TabbedPage.Children>
 
 </mvx:MvxTabbedPage>

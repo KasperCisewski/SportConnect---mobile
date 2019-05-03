@@ -8,15 +8,26 @@
              xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile"
              x:Class="SportConnect.Core.View.MainApplications.Normal.MainNormalAppView"
              Title="Sport Connect"
-
-             >
-           
+             >       
     <TabbedPage.ToolbarItems>
-
+      <ToolbarItem
+           Icon="settingsIcon.png"
+           Text="Settings"
+           Priority="0"
+           Order="Primary"
+           Command="{Binding ShowSettingsModule}"
+        />
+      <ToolbarItem
+          Icon="logout.png"
+          Text="Logout"
+          Priority="1"
+          Order="Primary"
+          Command="{Binding LogoutFromApp}"
+          />
     </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
 
-        <sportevents:SportEventsView/>
-        <profile:ProfileView/>
+      <sportevents:SportEventsView Icon="eventIcon"/>
+      <profile:ProfileView Icon="profileIcon.png"/>
     </TabbedPage.Children>
 </mvx:MvxTabbedPage>
