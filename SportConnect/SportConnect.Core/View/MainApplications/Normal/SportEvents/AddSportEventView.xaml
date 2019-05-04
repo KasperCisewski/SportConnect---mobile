@@ -1,27 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <mvx:MvxContentPage
-             x:TypeArguments="sportEvent:SportEventsViewModel"
+             x:TypeArguments="sportEvent:AddSportEventViewModel"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:sportEvent="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;assembly=SportConnect.Core"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SportConnect.Core.View.MainApplications.Normal.SportEvents.SportEventsView"
+             x:Class="SportConnect.Core.View.MainApplications.Normal.SportEvents.AddSportEventView"
              xmlns:res="clr-namespace:SportConnect.Core.Resources.SportEventResources;assembly=SportConnect.Core"
-             Title="Sport Events"
-
+             Title="Add Sport Event"
     >
-    
+
     <ContentPage.ToolbarItems >
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-
-            <StackLayout Orientation="Horizontal" Padding="20,10,20,10" HeightRequest="26">
-                <Label Text="{res:Translate AddNewSportEvent}" HorizontalOptions="Center"/>
-                <Button Image="addIcon.png" Command="{Binding AddSportEvent}" Opacity="0.7" HeightRequest="24" WidthRequest="24" BackgroundColor="ForestGreen"/>
-            </StackLayout>
-            <mvx:MvxListView >
-
-            </mvx:MvxListView>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
+
 </mvx:MvxContentPage>

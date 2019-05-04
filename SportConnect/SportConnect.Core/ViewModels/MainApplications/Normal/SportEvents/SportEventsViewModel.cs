@@ -1,4 +1,5 @@
-﻿using MvvmCross.Navigation;
+﻿using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using SportConnect.Core.ViewModels.Base;
 
 namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
@@ -9,5 +10,10 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
         {
 
         }
+        public IMvxAsyncCommand AddSportEvent =>
+         new MvxAsyncCommand(async () =>
+         {
+             await _navigationService.Navigate<AddSportEventViewModel>();
+         });      
     }
 }

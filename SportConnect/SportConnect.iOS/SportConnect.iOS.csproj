@@ -114,6 +114,7 @@
     <BundleResource Include="Resources\eventIcon.png" />
     <BundleResource Include="Resources\usersIcon.png" />
     <BundleResource Include="Resources\settingsIcon.png" />
+    <BundleResource Include="Resources\addIcon.png" />
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>

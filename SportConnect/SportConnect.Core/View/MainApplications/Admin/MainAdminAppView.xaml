@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<mvx:MvxTabbedPage x:TypeArguments="main:MainAdminAppViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+<mvx:MvxTabbedPage x:TypeArguments="mainVm:MainAdminAppViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-             xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
-             xmlns:main="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin;assembly=SportConnect.Core"
+                   xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                   xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
+                   xmlns:mainVm="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin;assembly=SportConnect.Core"
                    xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile"
                    xmlns:sportevents="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents"
                    xmlns:userslist="clr-namespace:SportConnect.Core.View.MainApplications.Admin.UsersList"
                    x:Class="SportConnect.Core.View.MainApplications.Admin.MainAdminAppView"
                    Title="Sport Connect Admin" 
-                   android:TabbedPage.ToolbarPlacement="Bottom"                 
+                   android:TabbedPage.ToolbarPlacement="Bottom"
                    >
     <TabbedPage.ToolbarItems>
         <ToolbarItem

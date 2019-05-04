@@ -18,7 +18,5 @@ namespace SportConnect.Core.ViewModels.Base
             {
                 await _navigationService.Navigate<SettingsModuleViewModel>();
             });
-
-
     }
 }

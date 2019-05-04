@@ -66,6 +66,11 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
         </Compile>
+        <Compile Update="Resources\SportEventResources\SportEventResources.Designer.cs">
+          <DependentUpon>SportEventResources.resx</DependentUpon>
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Update="Resources\AppResources.resx">
@@ -99,6 +104,10 @@
           <LastGenOutput>LoginAndRegisterResources.Designer.cs</LastGenOutput>
           <Generator>ResXFileCodeGenerator</Generator>
         </EmbeddedResource>
+        <EmbeddedResource Update="Resources\SportEventResources\SportEventResources.resx">
+          <LastGenOutput>SportEventResources.Designer.cs</LastGenOutput>
+          <Generator>ResXFileCodeGenerator</Generator>
+        </EmbeddedResource>
         <EmbeddedResource Update="View\LoginAndRegistration\Login\LoginView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
@@ -118,6 +127,9 @@
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="View\MainApplications\Normal\SettingsModule\SettingsModuleView.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="View\MainApplications\Normal\SportEvents\AddSportEventView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="View\MainApplications\Normal\SportEvents\SportEventsView.xaml">
