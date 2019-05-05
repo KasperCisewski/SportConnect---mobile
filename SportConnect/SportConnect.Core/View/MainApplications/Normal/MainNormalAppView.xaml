@@ -27,7 +27,7 @@
     </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
 
-      <sportevents:SportEventsView Icon="eventIcon"/>
-      <profile:ProfileView Icon="profileIcon.png"/>
+      <sportevents:SportEventsView Icon="eventIcon" ViewModel="SportEventsViewModel"/>
+      <profile:ProfileView Icon="profileIcon.png" ViewModel="ProfileViewModel"/>
     </TabbedPage.Children>
 </mvx:MvxTabbedPage>

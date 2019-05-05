@@ -7,6 +7,9 @@
                    xmlns:mainVm="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin;assembly=SportConnect.Core"
                    xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile"
                    xmlns:sportevents="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents"
+                   xmlns:sporteventsVM="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents"
+                                xmlns:sportEventVM="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;assembly=SportConnect.Core"
+
                    xmlns:userslist="clr-namespace:SportConnect.Core.View.MainApplications.Admin.UsersList"
                    x:Class="SportConnect.Core.View.MainApplications.Admin.MainAdminAppView"
                    Title="Sport Connect Admin" 
@@ -29,9 +32,14 @@
           />
     </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
-        <sportevents:SportEventsView Icon="eventIcon"/>
-        <profile:ProfileView Icon="profileIcon.png"/>
-        <userslist:UsersListView Icon="usersIcon.png"/>
+        <sportevents:SportEventsView Icon="eventIcon" BindingContext="{Binding sportEventVM:SportEventViewModel}" >
+            <!--ViewModel="{Binding sporteventsVM:SportEventsViewModel}"-->
+            <!--<sportevents:SportEventsView.BindingContext>
+                <sporteventsVM:SportEventsViewModel/>
+            </sportevents:SportEventsView.BindingContext>-->
+        </sportevents:SportEventsView>
+        <profile:ProfileView Icon="profileIcon.png" ViewModel="ProfileViewModel"/>
+        <userslist:UsersListView Icon="usersIcon.png" ViewModel="UsersListViewModel"/>
     </TabbedPage.Children>
 
 </mvx:MvxTabbedPage>

@@ -40,7 +40,6 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Login
             _userService = userService;
             _userRepository = userRepository;
             _viewHistoryService = viewHistoryService;
-
         }
         public override void Prepare()
         {
