@@ -136,7 +136,8 @@
     <value>Email must contains @</value>
   </data>
   <data name="PasswordIsNotValid" xml:space="preserve">
-    <value>Password must have 6 characters and at least one digit</value>
+    <value>Password must have 6 characters 
+and at least one digit</value>
   </data>
   <data name="RepeatedPasswordIsNotAsPassword" xml:space="preserve">
     <value>Both passwords must be the same</value>

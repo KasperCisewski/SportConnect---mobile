@@ -115,7 +115,8 @@ namespace SportConnect.Core.Resources.LoginAndRegisterResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password must have 6 characters and at least one digit.
+        ///   Looks up a localized string similar to Password must have 6 characters 
+        ///and at least one digit.
         /// </summary>
         internal static string PasswordIsNotValid {
             get {
