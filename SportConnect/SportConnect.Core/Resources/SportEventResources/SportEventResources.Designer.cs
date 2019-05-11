@@ -68,5 +68,113 @@ namespace SportConnect.Core.Resources.SportEventResources {
                 return ResourceManager.GetString("AddNewSportEvent", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City name.
+        /// </summary>
+        internal static string CityName {
+            get {
+                return ResourceManager.GetString("CityName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Event end date.
+        /// </summary>
+        internal static string EventEndDate {
+            get {
+                return ResourceManager.GetString("EventEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Event name.
+        /// </summary>
+        internal static string EventName {
+            get {
+                return ResourceManager.GetString("EventName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Event start date.
+        /// </summary>
+        internal static string EventStartDate {
+            get {
+                return ResourceManager.GetString("EventStartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Closed/Open.
+        /// </summary>
+        internal static string EventType {
+            get {
+                return ResourceManager.GetString("EventType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Place number.
+        /// </summary>
+        internal static string HouseNumber {
+            get {
+                return ResourceManager.GetString("HouseNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum number of participants.
+        /// </summary>
+        internal static string MaximumNumberOfParticipants {
+            get {
+                return ResourceManager.GetString("MaximumNumberOfParticipants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum number of participants.
+        /// </summary>
+        internal static string MinimumNumberOfParticipants {
+            get {
+                return ResourceManager.GetString("MinimumNumberOfParticipants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proposed skill level.
+        /// </summary>
+        internal static string ProposedSkillLevel {
+            get {
+                return ResourceManager.GetString("ProposedSkillLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activity type.
+        /// </summary>
+        internal static string SportType {
+            get {
+                return ResourceManager.GetString("SportType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Street.
+        /// </summary>
+        internal static string Street {
+            get {
+                return ResourceManager.GetString("Street", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip code.
+        /// </summary>
+        internal static string ZipCode {
+            get {
+                return ResourceManager.GetString("ZipCode", resourceCulture);
+            }
+        }
     }
 }

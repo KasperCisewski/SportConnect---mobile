@@ -1,4 +1,6 @@
-﻿using MvvmCross.Forms.Views;
+﻿using System;
+using System.Threading.Tasks;
+using MvvmCross.Forms.Views;
 using SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;
 
 namespace SportConnect.Core.View.MainApplications.Normal.SportEvents

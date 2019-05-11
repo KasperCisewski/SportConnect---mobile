@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage
+             x:TypeArguments="sportEvent:AddSportEventViewModel"  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:sportEvent="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents.AddSportEvent;assembly=SportConnect.Core"
+             xmlns:res="clr-namespace:SportConnect.Core.Resources.SportEventResources;assembly=SportConnect.Core"
+             x:Class="SportConnect.Core.View.MainApplications.Normal.SportEvents.AddSportEvent.AddSportEventView"
+             Title="Add Sport Event"
+    >
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="settingsIcon.png"
+            Text="Settings"
+            Priority="0"
+            Order="Primary"
+            Command="{Binding ShowSettingsModule}"
+        />
+        <ToolbarItem
+            Icon="logout.png"
+            Text="Logout"
+            Priority="1"
+            Order="Primary"
+            Command="{Binding LogoutFromApp}"
+          />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <ScrollView Grid.Row="1" Grid.Column="1" 
+                         HorizontalOptions="Center" VerticalOptions="Center" MinimumWidthRequest="90" >
+
+                <StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate EventName}"  />
+                        <Entry Text="{Binding EventName}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate EventStartDate}"  />
+                        <DatePicker Date="{Binding EventStartDate}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate EventEndDate}"  />
+                        <DatePicker MinimumDate="{Binding TodaysDate}" Date="{Binding EventEndDate}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate SportType}"  />
+                        <Picker SelectedItem="{Binding SportTypeItem}" ItemsSource="{Binding SportTypeList}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate Street}"  />
+                        <Entry Text="{Binding StreetName}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate HouseNumber}"  />
+                        <Entry Text="{Binding HouseNumber}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate ZipCode}"  />
+                        <Entry Text="{Binding EventName}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate CityName}"  />
+                        <Entry Text="{Binding CityName}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate EventType}"  />
+                        <Switch IsToggled="{Binding IsEventTypeSwitched}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate MinimumNumberOfParticipants}"  />
+                        <Entry Text="{Binding MinimumNumberOfParticipants}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate MaximumNumberOfParticipants}"  />
+                        <Entry Text="{Binding MaximumNumberOfParticipants}" HorizontalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate ProposedSkillLevel}"  />
+                        <Picker ItemsSource="{Binding SportSkillLevelList}" SelectedItem="{Binding ProposedSportSkillLevel}" HorizontalOptions= "FillAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</mvx:MvxContentPage>

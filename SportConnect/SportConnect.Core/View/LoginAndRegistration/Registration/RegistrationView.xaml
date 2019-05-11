@@ -32,29 +32,29 @@
 
                 <StackLayout Orientation="Vertical">
                     <Label Text="{res:Translate EmailName}"  />
-                    <Entry Text="{Binding Email}" HorizontalOptions= "FillAndExpand" TextChanged="EmailOnTextChanged" />
+                    <Entry Text="{Binding Email}" VerticalOptions= "FillAndExpand" TextChanged="EmailOnTextChanged" />
                 </StackLayout>
                 <Label Text="{Binding EmailNotValidatedMessage}" TextColor="DarkRed" FontSize="Micro" IsVisible="{Binding IsEmailNotValidated}"/>
 
                 <StackLayout Orientation="Vertical">
                     <Label Text="Your login"  />
-                    <Entry Text="{Binding Login}" HorizontalOptions= "FillAndExpand" TextChanged="LoginOnTextChanged"  />
+                    <Entry Text="{Binding Login}" VerticalOptions= "FillAndExpand" TextChanged="LoginOnTextChanged"  />
                 </StackLayout>
                 <Label Text="{Binding LoginNotValidatedMessage}" TextColor="DarkRed" FontSize="Micro" IsVisible="{Binding IsLoginNotValidated}"/>
 
                 <StackLayout Orientation="Vertical">
                     <Label Text="Your password"/>
-                    <Entry Text="{Binding Password}" IsPassword="True" HorizontalOptions="FillAndExpand" TextChanged="PasswordOnTextChanged" />
+                    <Entry Text="{Binding Password}" IsPassword="True" VerticalOptions="FillAndExpand" TextChanged="PasswordOnTextChanged" />
                 </StackLayout>
                 <Label Text="{Binding PasswordNotValidatedMessage}" TextColor="DarkRed" FontSize="Micro" IsVisible="{Binding IsPasswordNotValidated}"/>
 
                 <StackLayout Orientation="Vertical">
                     <Label Text="Repeat your password"/>
-                    <Entry Text="{Binding RepeatedPassword}" IsPassword="True" HorizontalOptions="FillAndExpand" TextChanged="RepeatedPasswordOnTextChanged"   />
+                    <Entry Text="{Binding RepeatedPassword}" IsPassword="True" VerticalOptions="FillAndExpand" TextChanged="RepeatedPasswordOnTextChanged"   />
                 </StackLayout>
                 <Label Text="{Binding RepeatedPasswordNotValidatedMessage}" TextColor="DarkRed" FontSize="Micro" IsVisible="{Binding IsSecondPasswordNotValidated}"/>
 
-                <Button Text="Register" Command="{Binding RegisterCommand}" HorizontalOptions="Center" />
+                <Button Text="Register" Command="{Binding RegisterCommand}" VerticalOptions="Center" />
             </StackLayout>
         </Grid>
     </ContentPage.Content>

@@ -130,7 +130,7 @@
         <EmbeddedResource Update="View\MainApplications\Normal\SettingsModule\SettingsModuleView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
-        <EmbeddedResource Update="View\MainApplications\Normal\SportEvents\AddSportEventView.xaml">
+        <EmbeddedResource Update="View\MainApplications\Normal\SportEvents\AddSportEvent\AddSportEventView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
         <EmbeddedResource Update="View\MainApplications\Normal\SportEvents\SportEventsView.xaml">

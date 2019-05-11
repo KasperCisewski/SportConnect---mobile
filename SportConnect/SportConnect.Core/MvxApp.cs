@@ -14,6 +14,8 @@ using SportConnect.Core.Services.User;
 using SportConnect.Core.ViewModels.Base;
 using SportConnect.Core.ViewModels.LoginAndRegistration.Login;
 using SportConnect.Core.ViewModels.MainApplications.Admin;
+using SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;
+using SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents.AddSportEvent;
 using Xamarin.Essentials;
 using IRestClient = SportConnect.Core.Services.Rest.Interfaces.IRestClient;
 using RestClient = SportConnect.Core.Services.Rest.Implementations.RestClient;
@@ -52,8 +54,10 @@ namespace SportConnect.Core
 
             Mvx.IoCProvider.RegisterType<BaseViewModel>();
             Mvx.IoCProvider.RegisterType<LoginViewModel>();
-            Mvx.IoCProvider.RegisterType<MainAdminAppViewModel>();    
-            
+            Mvx.IoCProvider.RegisterType<MainAdminAppViewModel>();
+            Mvx.IoCProvider.RegisterType<AddSportEventViewModel>();
+            Mvx.IoCProvider.RegisterType<SportEventsViewModel>();
+
             Resources.AppResources.Culture = Mvx.IoCProvider.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
             RegisterAppStart<LoginViewModel>();
         }

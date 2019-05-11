@@ -2,6 +2,7 @@
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using SportConnect.Core.ViewModels.MainApplications.Normal.SettingsModule;
+using System;
 
 namespace SportConnect.Core.ViewModels.Base
 {

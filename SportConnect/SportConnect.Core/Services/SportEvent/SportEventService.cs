@@ -7,6 +7,7 @@ using System.Net.Http;
 using SportConnect.Core.Services.Rest.Interfaces;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Plugin.Geolocator.Abstractions;
 
 namespace SportConnect.Core.Services.SportEvent
 {
@@ -24,21 +25,27 @@ namespace SportConnect.Core.Services.SportEvent
             _restClient = restClient;
         }
 
-        public async Task<IQueryable<SportEventModel>> GetSportEventsAsync(Guid userId)
+        public async Task<List<SportEventModel>> GetSportEventsAsync(Guid userId)
         {
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
-            var postion = await locator.GetPositionAsync(new TimeSpan(10000));
+            Position position = new Position();
+            if (CrossGeolocator.IsSupported && CrossGeolocator.Current.IsGeolocationAvailable && CrossGeolocator.Current.IsGeolocationAvailable)
+            {
+                position = await locator.GetPositionAsync(TimeSpan.FromSeconds(10));
+            }
 
+            Task.WaitAll();
             try
             {
                 var response = await
-                    _restClient.MakeApiCall<IQueryable<SportEventModel>>
+                    _restClient.MakeApiCall<List<SportEventModel>>
                         ($"{ApiPath}getSportEvents", HttpMethod.Post, new SportEventApiModel
                         {
                             UserId = userId,
-                            Latitude = postion.Latitude,
-                            Longitude = postion.Longitude
+                            Latitude = position.Latitude,
+                            Longitude = position.Longitude,
+                            Take = 50
                         });
 
                 return response;
@@ -48,7 +55,7 @@ namespace SportConnect.Core.Services.SportEvent
                 _loggerService.LogError(e, $"Unhandled expection on getting sport events");
             }
 
-            return Enumerable.Empty<SportEventModel>().AsQueryable();
+            return new List<SportEventModel>();
         }
 
         private class SportEventApiModel

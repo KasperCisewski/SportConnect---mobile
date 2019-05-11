@@ -14,14 +14,34 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
+            <mvx:MvxListView ItemsSource="{Binding SportEventList}" >
+                <mvx:MvxListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
 
+                            </ViewCell.ContextActions>
+                            <StackLayout IsVisible="{Binding CanJoinToEvent}">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding EventName}"/>
+                                    <Label Text="{Binding EventDate}"/>
+                                    <Label Text="{Binding QuantityOfEventParticipantsDescription}"/>
+                                    <Label Text="{Binding SportEventManagerName}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding SportTypeName}"/>
+                                    <Label Text="{Binding ProposedEventSkillLevel}"/>
+                                    <Label Text="{Binding AddressDescription}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </mvx:MvxListView.ItemTemplate>
+            </mvx:MvxListView>
             <StackLayout Orientation="Horizontal" Padding="20,10,20,10" HeightRequest="26">
                 <Label Text="{res:Translate AddNewSportEvent}" HorizontalOptions="Center"/>
                 <Button Image="addIcon.png" Command="{Binding AddSportEvent}" Opacity="0.7" HeightRequest="24" WidthRequest="24" BackgroundColor="ForestGreen"/>
             </StackLayout>
-            <mvx:MvxListView >
-
-            </mvx:MvxListView>
         </StackLayout>
     </ContentPage.Content>
 </mvx:MvxContentPage>

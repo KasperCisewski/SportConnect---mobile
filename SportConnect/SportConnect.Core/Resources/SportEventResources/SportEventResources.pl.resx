@@ -120,4 +120,40 @@
   <data name="AddNewSportEvent" xml:space="preserve">
     <value>Dodaj nowe wydarzenie</value>
   </data>
+  <data name="CityName" xml:space="preserve">
+    <value>Miasto</value>
+  </data>
+  <data name="EventEndDate" xml:space="preserve">
+    <value>Data zakończenia</value>
+  </data>
+  <data name="EventName" xml:space="preserve">
+    <value>Nazwa eventu</value>
+  </data>
+  <data name="EventStartDate" xml:space="preserve">
+    <value>Data rozpoczecia</value>
+  </data>
+  <data name="EventType" xml:space="preserve">
+    <value>Zamknięty/Otwarty</value>
+  </data>
+  <data name="HouseNumber" xml:space="preserve">
+    <value>Numer miejsca</value>
+  </data>
+  <data name="MaximumNumberOfParticipants" xml:space="preserve">
+    <value>Maksymalna ilość osób</value>
+  </data>
+  <data name="MinimumNumberOfParticipants" xml:space="preserve">
+    <value>Minimalna ilość osób</value>
+  </data>
+  <data name="ProposedSkillLevel" xml:space="preserve">
+    <value>Proponowany poziom umiejetności</value>
+  </data>
+  <data name="SportType" xml:space="preserve">
+    <value>Typ aktywności</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>Ulica</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>Kod pocztowy</value>
+  </data>
 </root>

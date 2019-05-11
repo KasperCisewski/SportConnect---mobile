@@ -104,21 +104,6 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Login
             await _navigationService.Navigate<T>();
         }
 
-        //public IMvxPagedViewModel GetDefaultViewModel()
-        //{
-        //    throw new System.NotImplementedException();
-        //}
-
-        //public IMvxPagedViewModel GetNextViewModel(IMvxPagedViewModel currentViewModel)
-        //{
-        //    throw new System.NotImplementedException();
-        //}
-
-        //public IMvxPagedViewModel GetPreviousViewModel(IMvxPagedViewModel currentViewModel)
-        //{
-        //    throw new System.NotImplementedException();
-        //}
-
         public IMvxAsyncCommand GoToRegistrationView =>
             new MvxAsyncCommand(async () =>
             {

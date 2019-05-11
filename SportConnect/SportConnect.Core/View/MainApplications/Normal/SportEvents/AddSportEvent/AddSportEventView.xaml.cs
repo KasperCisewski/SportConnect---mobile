@@ -1,7 +1,7 @@
 ﻿using MvvmCross.Forms.Views;
-using SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;
+using SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents.AddSportEvent;
 
-namespace SportConnect.Core.View.MainApplications.Normal.SportEvents
+namespace SportConnect.Core.View.MainApplications.Normal.SportEvents.AddSportEvent
 {
     public partial class AddSportEventView : MvxContentPage<AddSportEventViewModel>
     {
