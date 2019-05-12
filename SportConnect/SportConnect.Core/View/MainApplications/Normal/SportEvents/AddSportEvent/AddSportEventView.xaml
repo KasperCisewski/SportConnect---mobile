@@ -75,7 +75,7 @@
 
                     <StackLayout Orientation="Vertical">
                         <Label Text="{res:Translate Street}"  />
-                        <Entry Text="{Binding StreetName}" VerticalOptions= "FillAndExpand"/>
+                        <Entry Text="{Binding Street}" VerticalOptions= "FillAndExpand"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Vertical">
@@ -85,7 +85,7 @@
 
                     <StackLayout Orientation="Vertical">
                         <Label Text="{res:Translate ZipCode}"  />
-                        <Entry Text="{Binding EventName}" VerticalOptions= "FillAndExpand"/>
+                        <Entry Text="{Binding ZipCode}" VerticalOptions= "FillAndExpand"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Vertical">
