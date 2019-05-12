@@ -1,7 +1,9 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using SportConnect.Core.Data.Enums.SportSkillLevel;
+using SportConnect.Core.Model.SportEvents;
 using SportConnect.Core.Model.SportType;
+using SportConnect.Core.Services.SportEvent;
 using SportConnect.Core.Services.SportType;
 using SportConnect.Core.Services.User;
 using SportConnect.Core.ViewModels.Base;
@@ -16,6 +18,7 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents.AddSp
     public class AddSportEventViewModel : BaseViewModel
     {
         private readonly UserService _userService;
+        private readonly SportEventService _sportEventService;
         private readonly SportTypeService _sportTypeService;
 
         public string EventName { get; set; }
@@ -40,12 +43,15 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents.AddSp
 
         public AddSportEventViewModel(
             IMvxNavigationService navigationService,
+                            SportEventService sportEventService,
                             SportTypeService sportTypeService,
                             UserService userService)
             : base(navigationService)
         {
+            _sportEventService = sportEventService;
             _sportTypeService = sportTypeService;
             _userService = userService;
+
             SportTypeList = new ObservableCollection<SportType>();
             FillSportTypeList().GetAwaiter();
 
@@ -75,7 +81,23 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents.AddSp
 
         private async Task TryToSaveSportEvent()
         {
-            //throw new NotImplementedException();
+            var message = await _sportEventService.SaveSportEvent(new SportEventApiModelToCreate
+            {
+                EventName = this.EventName,
+                EventStartDate = this.EventStartDate,
+                EventStartTime = this.EventStartTime,
+                EventEndDate = this.EventEndDate,
+                EventEndTime = this.EventEndTime,
+                SportTypeItemId = this.SportTypeItem.Id,
+                Street = this.Street,
+                HouseNumber = this.HouseNumber,
+                ZipCode = this.ZipCode,
+                CityName = this.CityName,
+                IsEventTypeSwitched = this.IsEventTypeSwitched,
+                MinimumNumberOfParticipants = this.MinimumNumberOfParticipants,
+                MaximumNumberOfParticipants = this.MaximumNumberOfParticipants,
+                ProposedSportSkillLevelId = (int)this.ProposedSportSkillLevel
+            });
         }
     }
 }

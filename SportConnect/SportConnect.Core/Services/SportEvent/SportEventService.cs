@@ -25,6 +25,23 @@ namespace SportConnect.Core.Services.SportEvent
             _restClient = restClient;
         }
 
+        public async Task<string> SaveSportEvent(SportEventApiModelToCreate sportEventModel)
+        {
+            try
+            {
+                var response = await
+                    _restClient.MakeApiCall<string>
+                        ($"{ApiPath}addNewSportEvent", HttpMethod.Post, sportEventModel);                     
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                _loggerService.LogError(e, $"Unhandled expection on getting sport events");
+            }
+            return string.Empty;
+        }
+
         public async Task<List<SportEventModel>> GetSportEventsAsync(Guid userId)
         {
             var locator = CrossGeolocator.Current;
