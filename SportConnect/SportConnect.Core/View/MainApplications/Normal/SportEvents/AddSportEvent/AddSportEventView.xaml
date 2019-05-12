@@ -54,13 +54,23 @@
                     </StackLayout>
 
                     <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate EventStartTime}"  />
+                        <TimePicker Time="{Binding EventStartTime}"   VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
                         <Label Text="{res:Translate EventEndDate}"  />
-                        <DatePicker MinimumDate="{Binding TodaysDate}" Date="{Binding EventEndDate}" VerticalOptions= "FillAndExpand"/>
+                        <DatePicker MinimumDate="{Binding EventEndDate}" Date="{Binding EventEndDate}" VerticalOptions= "FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{res:Translate EventEndTime}"  />
+                        <TimePicker Time="{Binding EventEndTime}"   VerticalOptions= "FillAndExpand"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Vertical">
                         <Label Text="{res:Translate SportType}"  />
-                        <Picker SelectedItem="{Binding SportTypeItem}" ItemsSource="{Binding SportTypeList}" VerticalOptions= "FillAndExpand"/>
+                        <Picker SelectedItem="{Binding SportTypeItem}" ItemsSource="{Binding SportTypeList}" Title="{res:Translate PickSportType}" ItemDisplayBinding="{Binding SportName}" VerticalOptions= "FillAndExpand"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Vertical">
@@ -102,6 +112,8 @@
                         <Label Text="{res:Translate ProposedSkillLevel}"  />
                         <Picker ItemsSource="{Binding SportSkillLevelList}" SelectedItem="{Binding ProposedSportSkillLevel}" HorizontalOptions= "FillAndExpand"/>
                     </StackLayout>
+
+                    <Button Text="{res:Translate SaveEvent}" Command="{Binding SaveEvent}" />
                 </StackLayout>
             </ScrollView>
         </Grid>

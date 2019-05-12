@@ -10,6 +10,7 @@ using SportConnect.Core.Services.Logger;
 using SportConnect.Core.Services.Registration;
 using SportConnect.Core.Services.Settings;
 using SportConnect.Core.Services.SportEvent;
+using SportConnect.Core.Services.SportType;
 using SportConnect.Core.Services.User;
 using SportConnect.Core.ViewModels.Base;
 using SportConnect.Core.ViewModels.LoginAndRegistration.Login;
@@ -48,6 +49,7 @@ namespace SportConnect.Core
             Mvx.IoCProvider.RegisterType<UserService>();
             Mvx.IoCProvider.RegisterType<RegistrationService>();
             Mvx.IoCProvider.RegisterType<SportEventService>();
+            Mvx.IoCProvider.RegisterType<SportTypeService>();
             Mvx.IoCProvider.RegisterType<ILoggerService, LoggerService>();
             Mvx.IoCProvider.RegisterType<IRestClient, RestClient>();
             Mvx.IoCProvider.RegisterSingleton(() => new RestClient(Mvx.IoCProvider.Resolve<IMvxJsonConverter>(), Mvx.IoCProvider.Resolve<IMvxLog>()));

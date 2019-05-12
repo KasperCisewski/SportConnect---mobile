@@ -88,6 +88,15 @@ namespace SportConnect.Core.Resources.SportEventResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Event end time.
+        /// </summary>
+        internal static string EventEndTime {
+            get {
+                return ResourceManager.GetString("EventEndTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Event name.
         /// </summary>
         internal static string EventName {
@@ -102,6 +111,15 @@ namespace SportConnect.Core.Resources.SportEventResources {
         internal static string EventStartDate {
             get {
                 return ResourceManager.GetString("EventStartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Event start time.
+        /// </summary>
+        internal static string EventStartTime {
+            get {
+                return ResourceManager.GetString("EventStartTime", resourceCulture);
             }
         }
         
@@ -142,11 +160,29 @@ namespace SportConnect.Core.Resources.SportEventResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pick sport.
+        /// </summary>
+        internal static string PickSportType {
+            get {
+                return ResourceManager.GetString("PickSportType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Proposed skill level.
         /// </summary>
         internal static string ProposedSkillLevel {
             get {
                 return ResourceManager.GetString("ProposedSkillLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save event.
+        /// </summary>
+        internal static string SaveEvent {
+            get {
+                return ResourceManager.GetString("SaveEvent", resourceCulture);
             }
         }
         

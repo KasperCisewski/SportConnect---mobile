@@ -16,7 +16,8 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
 
         public SportEventsViewModel(
             IMvxNavigationService navigationService,
-            SportEventService sportEventService) : base(navigationService)
+            SportEventService sportEventService) 
+            : base(navigationService)
         {
             _sportEventService = sportEventService;
             SportEventList = new ObservableCollection<SportEventModel>();

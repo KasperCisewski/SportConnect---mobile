@@ -126,11 +126,17 @@
   <data name="EventEndDate" xml:space="preserve">
     <value>Data zakończenia</value>
   </data>
+  <data name="EventEndTime" xml:space="preserve">
+    <value>Godzina zakończenia</value>
+  </data>
   <data name="EventName" xml:space="preserve">
     <value>Nazwa eventu</value>
   </data>
   <data name="EventStartDate" xml:space="preserve">
     <value>Data rozpoczecia</value>
+  </data>
+  <data name="EventStartTime" xml:space="preserve">
+    <value>Godzina wydarzenia</value>
   </data>
   <data name="EventType" xml:space="preserve">
     <value>Zamknięty/Otwarty</value>
@@ -144,8 +150,14 @@
   <data name="MinimumNumberOfParticipants" xml:space="preserve">
     <value>Minimalna ilość osób</value>
   </data>
+  <data name="PickSportType" xml:space="preserve">
+    <value>Wybierz sport</value>
+  </data>
   <data name="ProposedSkillLevel" xml:space="preserve">
     <value>Proponowany poziom umiejetności</value>
+  </data>
+  <data name="SaveEvent" xml:space="preserve">
+    <value>Zapisz wydarzenie</value>
   </data>
   <data name="SportType" xml:space="preserve">
     <value>Typ aktywności</value>

@@ -1,4 +1,4 @@
-﻿namespace SportConnect.Core.Data.Enums.SportType
+﻿namespace SportConnect.Core.Model.SportType
 {
     public class SportType
     {
