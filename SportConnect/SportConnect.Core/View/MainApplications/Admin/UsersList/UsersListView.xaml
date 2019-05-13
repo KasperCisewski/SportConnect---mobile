@@ -3,12 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:usersList="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin.UsersList;assembly=SportConnect.Core"
+             xmlns:res="clr-namespace:SportConnect.Core.Resources.UsersListResources;assembly=SportConnect.Core"
+
              x:Class="SportConnect.Core.View.MainApplications.Admin.UsersList.UsersListView"
              Title="Users List"
                     >
     <ContentPage.ToolbarItems >
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-
+        <mvx:MvxListView ItemsSource="{Binding UsersList}" >
+            <mvx:MvxListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Command="{Binding EditUserAccount}" Text="{Binding res:Edit}"/>
+                            <MenuItem Command="{Binding DeleteUserAccount}" Text="{Binding res:Delete}"/>
+                        </ViewCell.ContextActions>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Login}"/>
+                                <Label Text="{Binding Email}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </mvx:MvxListView.ItemTemplate>
+        </mvx:MvxListView>
     </ContentPage.Content>
 </mvx:MvxContentPage>

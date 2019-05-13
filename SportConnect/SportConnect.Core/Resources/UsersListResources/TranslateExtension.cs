@@ -4,7 +4,7 @@ using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace SportConnect.Core.Resources.LoginAndRegisterResources
+namespace SportConnect.Core.Resources.UsersListResources
 {
     [ContentProperty("Text")]
     public class TranslateExtension : IMarkupExtension
@@ -25,7 +25,7 @@ namespace SportConnect.Core.Resources.LoginAndRegisterResources
                 return null;
             }
 
-            var translation = LoginAndRegisterResources.ResourceManager.GetString(Text, _cultureInfo);
+            var translation = UsersListResources.ResourceManager.GetString(Text, _cultureInfo);
 
 #if DEBUG
             if (translation == null)

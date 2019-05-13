@@ -8,12 +8,7 @@
                    xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile"
                    xmlns:sportevents="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents"
                    xmlns:sportEventsVM="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;assembly=SportConnect.Core"
-                   xmlns:addSportEvent="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents.AddSportEvent;assembly=SportConnect.Core"
-
-                   
-                   
                    xmlns:userslist="clr-namespace:SportConnect.Core.View.MainApplications.Admin.UsersList"
-                   xmlns:addsportevent="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents.AddSportEvent"
                    x:Class="SportConnect.Core.View.MainApplications.Admin.MainAdminAppView"
                    Title="Sport Connect Admin" 
                    android:TabbedPage.ToolbarPlacement="Bottom"
@@ -43,8 +38,6 @@
 
         <profile:ProfileView Icon="profileIcon.png" ViewModel="ProfileViewModel"/>
         <userslist:UsersListView Icon="usersIcon.png" ViewModel="UsersListViewModel"/>
-        <addsportevent:AddSportEventView BindingContext="{Binding addSportEvent:AddSportEventViewModel}"/>
-
     </TabbedPage.Children>
 
 </mvx:MvxTabbedPage>
