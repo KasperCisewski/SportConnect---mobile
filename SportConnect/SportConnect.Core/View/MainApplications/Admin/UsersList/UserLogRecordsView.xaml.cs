@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using MvvmCross.Forms.Views;
+using SportConnect.Core.ViewModels.MainApplications.Admin.UsersList;
 
 namespace SportConnect.Core.View.MainApplications.Admin.UsersList
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UserLogRecordsView : ContentPage
+    public partial class UserLogRecordsView : MvxContentPage<UserLogRecordsViewModel>
     {
         public UserLogRecordsView()
         {
