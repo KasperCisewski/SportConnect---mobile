@@ -81,6 +81,13 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Login
                         });
                     }
 
+                    GlobalStateService.UserData = new Model.UserData.AuthorizationTokenUserModel
+                    {
+                        Login = result.Login,
+                        Email = result.Email,
+                        UserId = result.UserId.Value
+                    };
+
                     if (result.UserRoleId == (int)UserRole.Administrator)
                     {
                         await ShowViewModelAndRemoveHistoryAsync<MainAdminAppViewModel>();

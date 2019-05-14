@@ -11,15 +11,18 @@
     <ContentPage.ToolbarItems >
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <mvx:MvxListView ItemsSource="{Binding UsersList}" >
-            <mvx:MvxListView.ItemTemplate>
+        <ListView ItemsSource="{Binding UsersList}" SelectedItem="{Binding SelectedUser}" >
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.ContextActions>
-                            <ToolbarItem  Command="{Binding EditUserAccount}" Text="{Binding res:Edit}"/>
-                            <ToolbarItem Command="{Binding DeleteUserAccount}" Text="{Binding res:Delete}" />
-                            <MenuItem Command="{Binding EditUserAccount}" Text="{Binding res:Edit}"/>
-                            <MenuItem Command="{Binding DeleteUserAccount}" Text="{Binding res:Delete}" />
+                            <!--<ToolbarItem  Command="{Binding EditUserAccount}" Text="edit test"/>
+                            <ToolbarItem Command="{Binding DeleteUserAccount}" Text="delete test" />-->
+                            <MenuItem Clicked="MenuItem_Clicked" Text="edit test m" IsDestructive="True"/>
+                            <MenuItem Command="{Binding DeleteUserAccount}" Text="delete test m"  />
+                            
+                            <!--<MenuItem Command="{Binding EditUserAccount}" Text="{Binding res:Edit}"/>
+                            <MenuItem Command="{Binding DeleteUserAccount}" Text="{Binding res:Delete}" />-->
                         </ViewCell.ContextActions>
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
@@ -29,7 +32,7 @@
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
-            </mvx:MvxListView.ItemTemplate>
-        </mvx:MvxListView>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </mvx:MvxContentPage>

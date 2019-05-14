@@ -9,5 +9,10 @@ namespace SportConnect.Core.View.MainApplications.Admin.UsersList
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Clicked(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
