@@ -5,6 +5,22 @@
              xmlns:usersList="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin.UsersList;assembly=SportConnect.Core"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SportConnect.Core.View.MainApplications.Admin.UsersList.AddNewUserView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="settingsIcon.png"
+            Text="Settings"
+            Priority="0"
+            Order="Primary"
+            Command="{Binding ShowSettingsModule}"
+        />
+        <ToolbarItem
+            Icon="logout.png"
+            Text="Logout"
+            Priority="1"
+            Order="Primary"
+            Command="{Binding LogoutFromApp}"
+          />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"

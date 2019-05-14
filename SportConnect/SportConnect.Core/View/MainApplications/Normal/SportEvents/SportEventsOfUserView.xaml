@@ -4,7 +4,11 @@
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:sportEvent="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;assembly=SportConnect.Core"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SportConnect.Core.View.MainApplications.Normal.SportEvents.SportEventsOfUserView">
+             x:Class="SportConnect.Core.View.MainApplications.Normal.SportEvents.SportEventsOfUserView"
+             Title="My sport events">
+    <ContentPage.ToolbarItems>
+
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"

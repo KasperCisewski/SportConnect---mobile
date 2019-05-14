@@ -5,10 +5,12 @@
                    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
                    xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
                    xmlns:mainVm="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin;assembly=SportConnect.Core"
-                   xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile"
-                   xmlns:sportevents="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents"
+                   xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile;assembly=SportConnect.Core"
+                   xmlns:profileVM="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile;assembly=SportConnect.Core"
+                   xmlns:sportevents="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents;assembly=SportConnect.Core"
                    xmlns:sportEventsVM="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;assembly=SportConnect.Core"
-                   xmlns:userslist="clr-namespace:SportConnect.Core.View.MainApplications.Admin.UsersList"
+                   xmlns:userslist="clr-namespace:SportConnect.Core.View.MainApplications.Admin.UsersList;assembly=SportConnect.Core"
+                   xmlns:usersListVM="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin.UsersList;assembly=SportConnect.Core"
                    x:Class="SportConnect.Core.View.MainApplications.Admin.MainAdminAppView"
                    Title="Sport Connect Admin" 
                    android:TabbedPage.ToolbarPlacement="Bottom"
@@ -31,13 +33,15 @@
     </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
         <sportevents:SportEventsView Icon="eventIcon" BindingContext="{Binding sportEventsVM:SportEventViewModel}" />
+        <sportevents:SportEventsOfUserView Icon="eventIcon" BindingContext="{Binding sportEventsVM:SportEventOfUserViewModel}" />
+
         <!--ViewModel="{Binding sporteventsVM:SportEventsViewModel}"-->
         <!--<sportevents:SportEventsView.BindingContext>
                 <sporteventsVM:SportEventsViewModel/>
             </sportevents:SportEventsView.BindingContext>-->
 
-        <profile:ProfileView Icon="profileIcon.png" ViewModel="ProfileViewModel"/>
-        <userslist:UsersListView Icon="usersIcon.png" ViewModel="UsersListViewModel"/>
+        <profile:ProfileView Icon="profileIcon.png" BindingContext="{Binding profileVM:ProfileViewModel}"/>
+        <userslist:UsersListView Icon="usersIcon.png" BindingContext="{Binding usersListVM:UsersListViewModel}"/>
     </TabbedPage.Children>
 
 </mvx:MvxTabbedPage>

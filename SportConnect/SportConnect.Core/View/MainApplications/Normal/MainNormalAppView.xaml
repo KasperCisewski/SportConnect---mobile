@@ -4,20 +4,22 @@
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
              xmlns:main="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal;assembly=SportConnect.Core"
-             xmlns:sportevents="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents"
-             xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile"
+             xmlns:sportevents="clr-namespace:SportConnect.Core.View.MainApplications.Normal.SportEvents;assembly=SportConnect.Core"
+             xmlns:sportEventsVM="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;assembly=SportConnect.Core"
+             xmlns:profile="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile;assembly=SportConnect.Core"
+             xmlns:profileVM="clr-namespace:SportConnect.Core.View.MainApplications.Normal.Profile;assembly=SportConnect.Core"
              x:Class="SportConnect.Core.View.MainApplications.Normal.MainNormalAppView"
              Title="Sport Connect"
-             >       
+             >
     <TabbedPage.ToolbarItems>
-      <ToolbarItem
+        <ToolbarItem
            Icon="settingsIcon.png"
            Text="Settings"
            Priority="0"
            Order="Primary"
            Command="{Binding ShowSettingsModule}"
         />
-      <ToolbarItem
+        <ToolbarItem
           Icon="logout.png"
           Text="Logout"
           Priority="1"
@@ -27,7 +29,8 @@
     </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
 
-      <sportevents:SportEventsView Icon="eventIcon" ViewModel="SportEventsViewModel"/>
-      <profile:ProfileView Icon="profileIcon.png" ViewModel="ProfileViewModel"/>
+        <sportevents:SportEventsView Icon="eventIcon" BindingContext="{Binding sportEventsVM:SportEventViewModel}" />
+        <sportevents:SportEventsOfUserView Icon="eventIcon" BindingContext="{Binding sportEventsVM:SportEventOfUserViewModel}" />
+        <profile:ProfileView Icon="profileIcon.png" BindingContext="{Binding profileVM:ProfileViewModel}"/>
     </TabbedPage.Children>
 </mvx:MvxTabbedPage>

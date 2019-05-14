@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using SportConnect.Core.Model.User;
 using SportConnect.Core.Services.Logger;
 using SportConnect.Core.Services.Rest.Interfaces;
 
@@ -40,6 +42,24 @@ namespace SportConnect.Core.Services.User
             }
 
             return new LoginApiModel();
+        }
+
+        public async Task<List<UserModel>> GetExistingUsers()
+        {
+            try
+            {
+                var response = await
+                    _restClient.MakeApiCall<List<UserModel>>
+                        ($"{ApiPath}getExistingUsers", HttpMethod.Get);
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                _loggerService.LogError(e, $"Unhandled expection when getting users");
+            }
+
+            return null;
         }
 
         public async Task<bool> ValidateEmailByCheckIfExistInApp(string email)

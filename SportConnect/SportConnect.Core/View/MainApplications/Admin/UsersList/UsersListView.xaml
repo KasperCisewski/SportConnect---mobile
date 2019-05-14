@@ -16,8 +16,10 @@
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.ContextActions>
+                            <ToolbarItem  Command="{Binding EditUserAccount}" Text="{Binding res:Edit}"/>
+                            <ToolbarItem Command="{Binding DeleteUserAccount}" Text="{Binding res:Delete}" />
                             <MenuItem Command="{Binding EditUserAccount}" Text="{Binding res:Edit}"/>
-                            <MenuItem Command="{Binding DeleteUserAccount}" Text="{Binding res:Delete}"/>
+                            <MenuItem Command="{Binding DeleteUserAccount}" Text="{Binding res:Delete}" />
                         </ViewCell.ContextActions>
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
