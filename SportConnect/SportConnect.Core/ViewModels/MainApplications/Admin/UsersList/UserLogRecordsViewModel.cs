@@ -5,9 +5,5 @@ namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
 {
     public class UserLogRecordsViewModel : BaseViewModel
     {
-        public UserLogRecordsViewModel(IMvxNavigationService navigationService) : base(navigationService)
-        {
-
-        }
     }
 }

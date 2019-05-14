@@ -26,13 +26,12 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Login
         private readonly IViewHistoryService _viewHistoryService;
 
         public LoginViewModel(
-            IMvxNavigationService navigationService,
             IMvxLogProvider mvxLogProvider,
             IAppSettings settings,
             IUserDialogs userDialogs,
             IViewHistoryService viewHistoryService,
             UserService userService,
-            UserRepository userRepository) : base(navigationService)
+            UserRepository userRepository)
         {
             _mvxLogProvider = mvxLogProvider;
             _settings = settings;
@@ -108,13 +107,13 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Login
         private async Task ShowViewModelAndRemoveHistoryAsync<T>() where T : BaseViewModel
         {
             _viewHistoryService.ClearHistory();
-            await _navigationService.Navigate<T>();
+            await NavigationService.Navigate<T>();
         }
 
         public IMvxAsyncCommand GoToRegistrationView =>
             new MvxAsyncCommand(async () =>
             {
-                await _navigationService.Navigate<RegistrationViewModel>();
+                await NavigationService.Navigate<RegistrationViewModel>();
             });
     }
 }

@@ -15,9 +15,7 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
         private readonly SportEventService _sportEventService;
 
         public SportEventsViewModel(
-            IMvxNavigationService navigationService,
             SportEventService sportEventService) 
-            : base(navigationService)
         {
             _sportEventService = sportEventService;
             SportEventList = new ObservableCollection<SportEventModel>();
@@ -29,7 +27,7 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
         public IMvxAsyncCommand AddSportEvent =>
          new MvxAsyncCommand(async () =>
          {
-             await _navigationService.Navigate<AddSportEventViewModel>();
+             await NavigationService.Navigate<AddSportEventViewModel>();
          });
 
         public async Task FillSportEventList()

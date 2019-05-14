@@ -5,6 +5,7 @@
 
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Android.Core;
+using MvvmCross.IoC;
 using MvvmCross.Logging;
 using Serilog;
 using SportConnect.Core.Services.Logger;
@@ -34,6 +35,13 @@ namespace SportConnect.Droid
                         .CreateLogger();
 
             return base.CreateLogProvider();
+        }
+        protected override IMvxIocOptions CreateIocOptions()
+        {
+            return new MvxIocOptions()
+            {
+                PropertyInjectorOptions = MvxPropertyInjectorOptions.All
+            };
         }
     }
 }

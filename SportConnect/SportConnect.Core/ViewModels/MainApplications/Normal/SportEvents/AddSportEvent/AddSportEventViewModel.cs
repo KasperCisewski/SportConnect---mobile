@@ -42,11 +42,9 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents.AddSp
            new MvxAsyncCommand(async () => { await TryToSaveSportEvent(); });
 
         public AddSportEventViewModel(
-            IMvxNavigationService navigationService,
                             SportEventService sportEventService,
                             SportTypeService sportTypeService,
                             UserService userService)
-            : base(navigationService)
         {
             _sportEventService = sportEventService;
             _sportTypeService = sportTypeService;

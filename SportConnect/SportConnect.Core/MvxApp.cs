@@ -15,6 +15,7 @@ using SportConnect.Core.Services.User;
 using SportConnect.Core.ViewModels.Base;
 using SportConnect.Core.ViewModels.LoginAndRegistration.Login;
 using SportConnect.Core.ViewModels.MainApplications.Admin;
+using SportConnect.Core.ViewModels.MainApplications.Normal.Profile;
 using SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;
 using SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents.AddSportEvent;
 using Xamarin.Essentials;
@@ -59,6 +60,7 @@ namespace SportConnect.Core
             Mvx.IoCProvider.RegisterType<MainAdminAppViewModel>();
             Mvx.IoCProvider.RegisterType<AddSportEventViewModel>();
             Mvx.IoCProvider.RegisterType<SportEventsViewModel>();
+            Mvx.IoCProvider.RegisterType<ProfileViewModel>();
 
             Resources.AppResources.Culture = Mvx.IoCProvider.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
             RegisterAppStart<LoginViewModel>();

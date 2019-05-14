@@ -30,7 +30,7 @@
     <TabbedPage.Children>
 
         <sportevents:SportEventsView Icon="eventIcon" BindingContext="{Binding sportEventsVM:SportEventViewModel}" />
-        <sportevents:SportEventsOfUserView Icon="eventIcon" BindingContext="{Binding sportEventsVM:SportEventOfUserViewModel}" />
+        <sportevents:SportEventsOfUserView Icon="eventAcceptedIcon" BindingContext="{Binding sportEventsVM:SportEventOfUserViewModel}" />
         <profile:ProfileView Icon="profileIcon.png" BindingContext="{Binding profileVM:ProfileViewModel}"/>
     </TabbedPage.Children>
 </mvx:MvxTabbedPage>

@@ -5,9 +5,5 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SettingsModule
 {
     public class SettingsModuleViewModel : BaseViewModel
     {
-        public SettingsModuleViewModel(IMvxNavigationService navigationService) : base(navigationService)
-        {
-
-        }
     }
 }

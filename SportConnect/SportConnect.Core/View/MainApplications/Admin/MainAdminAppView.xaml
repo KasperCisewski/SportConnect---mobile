@@ -33,13 +33,7 @@
     </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
         <sportevents:SportEventsView Icon="eventIcon" BindingContext="{Binding sportEventsVM:SportEventViewModel}" />
-        <sportevents:SportEventsOfUserView Icon="eventIcon" BindingContext="{Binding sportEventsVM:SportEventOfUserViewModel}" />
-
-        <!--ViewModel="{Binding sporteventsVM:SportEventsViewModel}"-->
-        <!--<sportevents:SportEventsView.BindingContext>
-                <sporteventsVM:SportEventsViewModel/>
-            </sportevents:SportEventsView.BindingContext>-->
-
+        <sportevents:SportEventsOfUserView Icon="eventAcceptedIcon" BindingContext="{Binding sportEventsVM:SportEventOfUserViewModel}" />
         <profile:ProfileView Icon="profileIcon.png" BindingContext="{Binding profileVM:ProfileViewModel}"/>
         <userslist:UsersListView Icon="usersIcon.png" BindingContext="{Binding usersListVM:UsersListViewModel}"/>
     </TabbedPage.Children>

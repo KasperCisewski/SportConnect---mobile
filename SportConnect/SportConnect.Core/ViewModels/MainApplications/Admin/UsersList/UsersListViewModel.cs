@@ -15,7 +15,7 @@ namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
 
         public ObservableCollection<UserModel> UsersList { get; set; }
         public UserModel SelectedUser { get; set; }
-        public UsersListViewModel(IMvxNavigationService navigationService, UserService userService) : base(navigationService)
+        public UsersListViewModel(UserService userService)
         {
             _userService = userService;
             UsersList = new ObservableCollection<UserModel>();

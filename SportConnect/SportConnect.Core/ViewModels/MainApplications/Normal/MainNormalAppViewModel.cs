@@ -5,9 +5,5 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal
 {
     public class MainNormalAppViewModel : MainApplicationViewModelBase
     {
-        public MainNormalAppViewModel(IMvxNavigationService navigationService) : base(navigationService)
-        {
-
-        }
     }
 }

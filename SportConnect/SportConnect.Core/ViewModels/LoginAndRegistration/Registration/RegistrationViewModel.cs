@@ -22,12 +22,11 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Registration
         private readonly RegistrationService _registrationService;
 
         public RegistrationViewModel(
-            IMvxNavigationService navigationService,
             IMvxLogProvider mvxLogProvider,
             IAppSettings settings,
             IUserDialogs userDialogs,
             UserService userService,
-            RegistrationService registrationService) : base(navigationService)
+            RegistrationService registrationService)
         {
             _mvxLogProvider = mvxLogProvider;
             _settings = settings;

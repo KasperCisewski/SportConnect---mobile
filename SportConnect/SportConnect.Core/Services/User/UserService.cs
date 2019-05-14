@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using SportConnect.Core.Model.Profile;
 using SportConnect.Core.Model.User;
+using SportConnect.Core.Services.GlobalStateService.Abstraction;
 using SportConnect.Core.Services.Logger;
 using SportConnect.Core.Services.Rest.Interfaces;
 
@@ -13,17 +15,52 @@ namespace SportConnect.Core.Services.User
     {
         private readonly ILoggerService _loggerService;
         private readonly IRestClient _restClient;
+        private readonly IGlobalStateService _globalStateService;
         private readonly IUserDialogs _userDialogs;
         private static readonly string ApiPath = $"{MvxApp.BackendUrl}/api/user/";
 
         public UserService(
             ILoggerService loggerService,
                 IRestClient restClient,
+                IGlobalStateService globalStateService,
                 IUserDialogs userDialogs)
         {
+            _globalStateService = globalStateService;
             _loggerService = loggerService;
             _restClient = restClient;
             _userDialogs = userDialogs;
+        }
+
+        public async Task UpdateProfileData(UserProfileModel userProfileModel)
+        {
+            try
+            {
+                var response = await
+                    _restClient.MakeApiCall<UserProfileModel>
+                        ($"{ApiPath}updateUserProfileData", HttpMethod.Put, userProfileModel);
+            }
+            catch (Exception e)
+            {
+                _loggerService.LogError(e, $"Error during update user profile");
+            }
+        }
+
+        public async Task<UserProfileModel> GetUserProfileData()
+        {
+            try
+            {
+                var response = await
+                    _restClient.MakeApiCall<UserProfileModel>
+                        ($"{ApiPath}getUserProfileData?userId={_globalStateService.UserData.UserId}", HttpMethod.Get);
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                _loggerService.LogError(e, $"Error during getting user profile data");
+            }
+
+            return new UserProfileModel();
         }
 
         public async Task<LoginApiModel> TryToLogIntoApp(string login, string password)

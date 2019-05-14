@@ -2,16 +2,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:profile="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.Profile;assembly=SportConnect.Core"
-             xmlns:res="clr-namespace:SportConnect.Core.Resources;assembly=SportConnect.Core"
              x:Class="SportConnect.Core.View.MainApplications.Normal.Profile.ProfileView"
              Title="Profile"
 
              >
     <ContentPage.ToolbarItems >
 
- 
+
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <StackLayout Grid.Row="1" Grid.Column="1" 
+                         HorizontalOptions="Center" VerticalOptions="Center" MinimumWidthRequest="90" >
+
+                <StackLayout Orientation="Vertical">
+                    <Entry Text="{Binding Email}" VerticalOptions= "FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Entry Text="{Binding Login}" VerticalOptions= "FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Picker SelectedItem="{Binding SportTypeItem}" ItemsSource="{Binding SportTypeList}" ItemDisplayBinding="{Binding SportName}" VerticalOptions= "FillAndExpand" />
+                </StackLayout>
+
+                <Button Text="Update" Command="{Binding UpdateUserProfile}" VerticalOptions="Center"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </mvx:MvxContentPage>

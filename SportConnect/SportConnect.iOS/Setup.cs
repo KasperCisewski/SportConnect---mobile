@@ -5,6 +5,7 @@
 
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Ios.Core;
+using MvvmCross.IoC;
 using MvvmCross.Logging;
 using Serilog;
 
@@ -30,6 +31,14 @@ namespace SportConnect.iOS
                         .CreateLogger();
 
             return base.CreateLogProvider();
+        }
+
+        protected override IMvxIocOptions CreateIocOptions()
+        {
+            return new MvxIocOptions()
+            {
+                PropertyInjectorOptions = MvxPropertyInjectorOptions.All
+            };
         }
     }
 }

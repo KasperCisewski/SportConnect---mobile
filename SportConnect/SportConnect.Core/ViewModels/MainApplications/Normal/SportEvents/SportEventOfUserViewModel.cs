@@ -5,9 +5,5 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
 {
     public class SportEventOfUserViewModel : BaseViewModel
     {
-        public SportEventOfUserViewModel(IMvxNavigationService navigationService) : base(navigationService)
-        {
-
-        }
     }
 }
