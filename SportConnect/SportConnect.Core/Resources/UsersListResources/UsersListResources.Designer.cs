@@ -61,6 +61,15 @@ namespace SportConnect.Core.Resources.UsersListResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new user account.
+        /// </summary>
+        internal static string AddNewAccount {
+            get {
+                return ResourceManager.GetString("AddNewAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         internal static string Delete {
@@ -75,6 +84,15 @@ namespace SportConnect.Core.Resources.UsersListResources {
         internal static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show all users log records.
+        /// </summary>
+        internal static string ShowUsersLogRecords {
+            get {
+                return ResourceManager.GetString("ShowUsersLogRecords", resourceCulture);
             }
         }
     }

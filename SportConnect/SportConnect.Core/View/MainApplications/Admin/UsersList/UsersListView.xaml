@@ -4,35 +4,43 @@
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:usersList="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin.UsersList;assembly=SportConnect.Core"
              xmlns:res="clr-namespace:SportConnect.Core.Resources.UsersListResources;assembly=SportConnect.Core"
-
+             x:Name="Template"
              x:Class="SportConnect.Core.View.MainApplications.Admin.UsersList.UsersListView"
              Title="Users List"
                     >
     <ContentPage.ToolbarItems >
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding UsersList}" SelectedItem="{Binding SelectedUser}" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.ContextActions>
-                            <!--<ToolbarItem  Command="{Binding EditUserAccount}" Text="edit test"/>
-                            <ToolbarItem Command="{Binding DeleteUserAccount}" Text="delete test" />-->
-                            <MenuItem Clicked="MenuItem_Clicked" Text="edit test m" IsDestructive="True"/>
-                            <MenuItem Command="{Binding DeleteUserAccount}" Text="delete test m"  />
-                            
-                            <!--<MenuItem Command="{Binding EditUserAccount}" Text="{Binding res:Edit}"/>
-                            <MenuItem Command="{Binding DeleteUserAccount}" Text="{Binding res:Delete}" />-->
-                        </ViewCell.ContextActions>
-                        <StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Login}"/>
-                                <Label Text="{Binding Email}"/>
+        <StackLayout>
+            <ListView ItemsSource="{Binding UsersList}" ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="MenuItem_Clicked" Text=" clear"/>
+                                <!--<MenuItem  Text="edit test m" IsDestructive="True"/>
+                                <MenuItem Command="{Binding DeleteUserAccount, Source={x:Reference Template}}" 
+                                          CommandParameter="{Binding .}" Text="delete test m"   />-->
+                            </ViewCell.ContextActions>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Label Text="{Binding Email}"/>
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Button  Text="{res:Translate ShowUsersLogRecords}" Command="{Binding ShowUsersLogRecords}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="20,10,20,10" HeightRequest="26">
+                    <Label Text="{res:Translate AddNewAccount}" HorizontalOptions="Center"/>
+                    <Button Image="addIcon.png" Command="{Binding GoToAddNewAccountView}" Opacity="0.7" HeightRequest="24" WidthRequest="24" BackgroundColor="ForestGreen"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </mvx:MvxContentPage>

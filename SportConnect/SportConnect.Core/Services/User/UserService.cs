@@ -31,6 +31,24 @@ namespace SportConnect.Core.Services.User
             _userDialogs = userDialogs;
         }
 
+        public async Task<List<UserLogRecordModel>> GetUserLogRecords()
+        {
+            try
+            {
+                var response = await
+                    _restClient.MakeApiCall<List<UserLogRecordModel>>
+                        ($"{ApiPath}getUsersLogRecords", HttpMethod.Get);
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                _loggerService.LogError(e, $"Error during getting users log records");
+            }
+
+            return new List<UserLogRecordModel>();
+        }
+
         public async Task UpdateProfileData(UserProfileModel userProfileModel)
         {
             try

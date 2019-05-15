@@ -5,7 +5,7 @@
              xmlns:usersList="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin.UsersList;assembly=SportConnect.Core"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SportConnect.Core.View.MainApplications.Admin.UsersList.UserLogRecordsView">
-    
+
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Icon="settingsIcon.png"
@@ -23,10 +23,21 @@
           />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ListView ItemsSource="{Binding UserLogRecordModelList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding RowNumber}"/>
+                            <Label Text="|"/>
+                            <Label Text="{Binding DateTime}"/>
+                            <Label Text="|"/>
+                            <Label Text="{Binding UserLogin}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
     </ContentPage.Content>
 </mvx:MvxContentPage>

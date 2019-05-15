@@ -1,9 +1,7 @@
 ﻿using MvvmCross.Commands;
-using MvvmCross.Navigation;
 using SportConnect.Core.Model.User;
 using SportConnect.Core.Services.User;
 using SportConnect.Core.ViewModels.Base;
-using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
@@ -44,6 +42,18 @@ namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
           new MvxAsyncCommand(async () =>
           {
               
-          });           
+          });
+
+        public IMvxAsyncCommand GoToAddNewAccountView =>
+          new MvxAsyncCommand(async () =>
+          {
+              await NavigationService.Navigate<AddNewUserViewModel>();
+          });
+
+        public IMvxAsyncCommand ShowUsersLogRecords =>
+          new MvxAsyncCommand(async () =>
+          {
+              await NavigationService.Navigate<UserLogRecordsViewModel>();
+          });
     }
 }
