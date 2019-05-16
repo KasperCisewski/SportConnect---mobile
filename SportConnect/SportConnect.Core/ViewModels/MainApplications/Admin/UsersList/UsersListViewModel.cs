@@ -19,7 +19,7 @@ namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
             UsersList = new ObservableCollection<UserModel>();
 
             FillUsersList().GetAwaiter();
-            
+
         }
 
         private async Task FillUsersList()
@@ -35,13 +35,13 @@ namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
         public IMvxAsyncCommand EditUserAccount =>
           new MvxAsyncCommand(async () =>
           {
-             
+              await NavigationService.Navigate<EditUserViewModel>();
           });
 
         public IMvxAsyncCommand DeleteUserAccount =>
           new MvxAsyncCommand(async () =>
           {
-              
+              await _userService.DeleteUser(SelectedUser.Id);
           });
 
         public IMvxAsyncCommand GoToAddNewAccountView =>

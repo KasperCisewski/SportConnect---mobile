@@ -49,6 +49,20 @@ namespace SportConnect.Core.Services.User
             return new List<UserLogRecordModel>();
         }
 
+        public async Task DeleteUser(Guid userId)
+        {
+            try
+            {
+                var response = await
+                    _restClient.MakeApiCall<DeleteUserApiModel>
+                        ($"{ApiPath}deleteUser?userUd={userId}", HttpMethod.Delete);
+            }
+            catch (Exception e)
+            {
+                _loggerService.LogError(e, $"Error during deleted user. Id : {userId}");
+            }
+        }
+
         public async Task UpdateProfileData(UserProfileModel userProfileModel)
         {
             try
@@ -154,6 +168,10 @@ namespace SportConnect.Core.Services.User
         }
     }
 
+    public class DeleteUserApiModel
+    {
+        public bool IsDeleted { get; set; }
+    }
     public class LoginExistApiModel
     {
         public bool IsExist { get; set; }

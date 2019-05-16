@@ -123,8 +123,14 @@
   <data name="Delete" xml:space="preserve">
     <value>Usuń</value>
   </data>
+  <data name="DeleteUser" xml:space="preserve">
+    <value>Usuń usera</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>Edytuj</value>
+  </data>
+  <data name="EditUser" xml:space="preserve">
+    <value>Edytuj usera</value>
   </data>
   <data name="ShowUsersLogRecords" xml:space="preserve">
     <value>Pokaż logi użytkowników</value>

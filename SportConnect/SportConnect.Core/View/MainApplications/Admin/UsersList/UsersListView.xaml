@@ -4,7 +4,8 @@
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:usersList="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Admin.UsersList;assembly=SportConnect.Core"
              xmlns:res="clr-namespace:SportConnect.Core.Resources.UsersListResources;assembly=SportConnect.Core"
-             x:Name="Template"
+                    xmlns:context="clr-namespace:ContextMenu;assembly=ContextMenu"
+                    x:Name="Template"
              x:Class="SportConnect.Core.View.MainApplications.Admin.UsersList.UsersListView"
              Title="Users List"
                     >
@@ -15,20 +16,21 @@
             <ListView ItemsSource="{Binding UsersList}" ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem Clicked="MenuItem_Clicked" Text=" clear"/>
-                                <!--<MenuItem  Text="edit test m" IsDestructive="True"/>
-                                <MenuItem Command="{Binding DeleteUserAccount, Source={x:Reference Template}}" 
-                                          CommandParameter="{Binding .}" Text="delete test m"   />-->
-                            </ViewCell.ContextActions>
-                            <StackLayout>
+                        <context:SideActionBarCell>
+                            <context:SideActionBarCell.Content>
                                 <StackLayout Orientation="Horizontal">
-
                                     <Label Text="{Binding Email}"/>
                                 </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
+                            </context:SideActionBarCell.Content>
+                            <context:SideActionBarCell.ContextTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Button Command="{Binding EditUserAccount}" Text="{Binding res:Translate EditUser}" Opacity="0.9" BackgroundColor="DarkOrange"/>
+                                        <Button Command="{Binding DeleteUserAccount}" Text="{Binding res:Translate DeleteUser}" Opacity="0.9" BackgroundColor="DarkRed"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </context:SideActionBarCell.ContextTemplate>
+                        </context:SideActionBarCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

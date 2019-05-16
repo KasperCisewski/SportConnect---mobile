@@ -9,6 +9,7 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
+        <PackageReference Include="ContextViewCell" Version="1.0.4" />
         <PackageReference Include="Fody" Version="3.2.17" developmentDependency="true" />
         <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.1.2" />
         <PackageReference Include="Microsoft.NETCore.Targets" Version="2.1.0" />

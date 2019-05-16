@@ -40,7 +40,7 @@
             </mvx:MvxListView>
             <StackLayout Orientation="Horizontal" Padding="20,10,20,10" HeightRequest="26">
                 <Label Text="{res:Translate AddNewSportEvent}" HorizontalOptions="Center"/>
-                <Button Image="addIcon.png" Command="{Binding AddSportEvent}" Opacity="0.7" HeightRequest="24" WidthRequest="24" BackgroundColor="ForestGreen"/>
+                <Button Image="addIcon.png" Command="{Binding AddSportEvent}" Opacity="0.7" HeightRequest="24" WidthRequest="24" BackgroundColor="ForestGreen" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
