@@ -23,4 +23,8 @@ namespace SportConnect.Core.ViewModels.Base
                 await NavigationService.Navigate<SettingsModuleViewModel>();
             });
     }
+    public abstract class BaseViewModel<T> : BaseViewModel, IMvxViewModel<T>
+    {
+        public abstract void Prepare(T parameter);
+    }
 }

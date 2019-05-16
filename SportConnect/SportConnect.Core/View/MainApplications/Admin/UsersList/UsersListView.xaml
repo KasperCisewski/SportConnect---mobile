@@ -13,7 +13,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding UsersList}" ItemTapped="ListView_ItemTapped">
+            <mvx:MvxListView ItemsSource="{Binding UsersList}" SelectedItem="{Binding SelectedUser}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <context:SideActionBarCell>
@@ -24,16 +24,16 @@
                             </context:SideActionBarCell.Content>
                             <context:SideActionBarCell.ContextTemplate>
                                 <DataTemplate>
-                                    <StackLayout>
-                                        <Button Command="{Binding EditUserAccount}" Text="{Binding res:Translate EditUser}" Opacity="0.9" BackgroundColor="DarkOrange"/>
-                                        <Button Command="{Binding DeleteUserAccount}" Text="{Binding res:Translate DeleteUser}" Opacity="0.9" BackgroundColor="DarkRed"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Button Clicked="Button_Clicked_Edit_User"  Text="Edit" Opacity="0.9" BackgroundColor="DarkOrange"/>
+                                        <Button Clicked="Button_Clicked_Delete_User"  Text="Delete" Opacity="0.9" BackgroundColor="DarkRed"/>
                                     </StackLayout>
                                 </DataTemplate>
                             </context:SideActionBarCell.ContextTemplate>
                         </context:SideActionBarCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </mvx:MvxListView>
             <StackLayout>
                 <StackLayout Orientation="Horizontal" >
                     <Button  Text="{res:Translate ShowUsersLogRecords}" Command="{Binding ShowUsersLogRecords}"/>

@@ -1,8 +1,11 @@
 ﻿using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using SportConnect.Core.Model.User;
 using SportConnect.Core.Services.User;
 using SportConnect.Core.ViewModels.Base;
+using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
@@ -32,11 +35,41 @@ namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
             }
         }
 
+        public async Task GoToEditUserView()
+        {
+            EditUserModel editUserModel;
+            if (SelectedUser == null)
+            {
+                editUserModel = new EditUserModel
+                {
+                    UserId = UsersList.First().Id
+                };
+            }
+            else
+            {
+                editUserModel = new EditUserModel
+                {
+                    UserId = SelectedUser.Id
+                };
+            }
+
+            await NavigationService.Navigate<EditUserViewModel, EditUserModel>(editUserModel);
+        }
+        public async Task DeleteUser()
+        {
+            await _userService.DeleteUser(SelectedUser.Id);
+        }
+
         public IMvxAsyncCommand EditUserAccount =>
           new MvxAsyncCommand(async () =>
           {
-              await NavigationService.Navigate<EditUserViewModel>();
+              var editUserModel = new EditUserModel
+              {
+                  UserId = SelectedUser.Id
+              };
+              await NavigationService.Navigate<EditUserViewModel, EditUserModel>(editUserModel);
           });
+
 
         public IMvxAsyncCommand DeleteUserAccount =>
           new MvxAsyncCommand(async () =>
@@ -55,5 +88,11 @@ namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
           {
               await NavigationService.Navigate<UserLogRecordsViewModel>();
           });
+
+
+    }
+    public class EditUserModel
+    {
+        public Guid UserId { get; set; }
     }
 }

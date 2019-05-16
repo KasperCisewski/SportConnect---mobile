@@ -131,6 +131,9 @@
         <EmbeddedResource Update="View\MainApplications\Admin\UsersList\AddNewUserView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
+        <EmbeddedResource Update="View\MainApplications\Admin\UsersList\EditUserView.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
         <EmbeddedResource Update="View\MainApplications\Admin\UsersList\UserLogRecordsView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>

@@ -59,7 +59,7 @@ namespace SportConnect.Core.Services.User
             }
             catch (Exception e)
             {
-                _loggerService.LogError(e, $"Error during deleted user. Id : {userId}");
+                _loggerService.LogError(e, $"Error during deleted user. His Id was {userId}");
             }
         }
 
@@ -77,7 +77,7 @@ namespace SportConnect.Core.Services.User
             }
         }
 
-        public async Task<UserProfileModel> GetUserProfileData()
+        public async Task<UserProfileModel> GetUserProfileData(Guid userId = new Guid())
         {
             try
             {
