@@ -23,9 +23,23 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="User email"  />
+                <Entry Text="{Binding Email}" VerticalOptions= "FillAndExpand"  />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="User login"  />
+                <Entry Text="{Binding Login}" VerticalOptions= "FillAndExpand"   />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="User password"/>
+                <Entry Text="{Binding Password}" IsPassword="True" VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <Button Text="Add new user" Command="{Binding AddNewUserCommand}" VerticalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </mvx:MvxContentPage>
