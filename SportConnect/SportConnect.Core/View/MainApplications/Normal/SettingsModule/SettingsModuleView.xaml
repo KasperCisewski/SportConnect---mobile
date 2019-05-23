@@ -6,10 +6,18 @@
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:settingsModule="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SettingsModule;assembly=SportConnect.Core"
              x:Class="SportConnect.Core.View.MainApplications.Normal.SettingsModule.SettingsModuleView"
+             Title="Settings module"
                     >
-    <ContentPage.ToolbarItems >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="logout.png"
+            Text="Logout"
+            Priority="1"
+            Order="Primary"
+            Command="{Binding LogoutFromApp}"
+          />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-
+        <Label Text="Application settings"/>
     </ContentPage.Content>
 </mvx:MvxContentPage>
