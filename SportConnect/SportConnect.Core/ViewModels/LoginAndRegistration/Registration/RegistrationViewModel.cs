@@ -60,15 +60,8 @@ namespace SportConnect.Core.ViewModels.LoginAndRegistration.Registration
             {
                 var isRegistered = await _registrationService.TryToRegisterUserAsync(new RegistrationResponseApiModel(Login, Email, Password));
 
-                if (isRegistered)
-                {
-                    _userDialogs.Alert(new AlertConfig() { Message = "You register into app" });
-                    await ClearAllAppValues();
-                }
-                else
-                {
-                    _userDialogs.Alert(new AlertConfig() { Message = "Sorry, we can't register you" });
-                }
+                await ClearAllAppValues();
+
             }
             else
             {
