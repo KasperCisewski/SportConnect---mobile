@@ -25,10 +25,17 @@ namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
 
         }
 
+        public override void ViewAppearing()
+        {
+            FillUsersList().GetAwaiter();
+            base.ViewAppearing();
+        }
+
         private async Task FillUsersList()
         {
             var existingUsers = await _userService.GetExistingUsers();
 
+            UsersList.Clear();
             foreach (var user in existingUsers)
             {
                 UsersList.Add(user);

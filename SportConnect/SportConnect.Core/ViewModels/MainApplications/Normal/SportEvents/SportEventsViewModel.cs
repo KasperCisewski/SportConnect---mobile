@@ -23,6 +23,12 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
             FillSportEventList().GetAwaiter();
         }
 
+        public override void ViewAppearing()
+        {
+            FillSportEventList().GetAwaiter();
+            base.ViewAppearing();
+        }
+
         public ObservableCollection<SportEventModel> SportEventList { get; set; }
         public SportEventModel SportEventSelected { get; set; }
         public IMvxAsyncCommand AddSportEvent =>
@@ -40,6 +46,7 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
         {
             var eventList = await _sportEventService.GetSportEventsAsync(new System.Guid());
 
+            SportEventList.Clear();
             foreach (var sportEvent in eventList)
             {
                 SportEventList.Add(sportEvent);

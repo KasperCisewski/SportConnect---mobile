@@ -22,10 +22,17 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
             Task.WaitAll();
         }
 
+        public override void ViewAppearing()
+        {
+            FillSportEvents().GetAwaiter();
+            base.ViewAppearing();
+        }
+
         private async Task FillSportEvents()
         {
             var eventList = await _sportEventService.GetSportEventsAssignedToUser();
 
+            SportEventList.Clear();
             foreach (var sportEvent in eventList)
             {
                 SportEventList.Add(sportEvent);

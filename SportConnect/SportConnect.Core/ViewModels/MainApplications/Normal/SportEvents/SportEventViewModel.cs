@@ -24,7 +24,7 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
         {
             SportEventModel = parameter;
             FillSportEventView().GetAwaiter();
-        }
+        }    
 
         private async Task FillSportEventView()
         {

@@ -38,6 +38,7 @@
             </StackLayout>
 
             <Button Text="Update" Command="{Binding UpdateUserProfile}" VerticalOptions="Center"/>
+            <Button Text="Delete" Command="{Binding DeleteUser}" VerticalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </mvx:MvxContentPage>

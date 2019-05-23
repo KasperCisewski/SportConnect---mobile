@@ -13,7 +13,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <mvx:MvxListView ItemsSource="{Binding UsersList}" SelectedItem="{Binding SelectedUser}" >
+            <mvx:MvxListView ItemsSource="{Binding UsersList}" SelectedItem="{Binding SelectedUser}" ItemSelected="User_ItemSelected" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <context:SideActionBarCell>
@@ -25,8 +25,8 @@
                             <context:SideActionBarCell.ContextTemplate>
                                 <DataTemplate>
                                     <StackLayout Orientation="Horizontal">
-                                        <Button Clicked="Button_Clicked_Edit_User"  Text="Edit" Opacity="0.9" BackgroundColor="DarkOrange"/>
-                                        <Button Clicked="Button_Clicked_Delete_User"  Text="Delete" Opacity="0.9" BackgroundColor="DarkRed"/>
+                                        <!--<Button Clicked="Button_Clicked_Edit_User"  Text="Edit" Opacity="0.9" BackgroundColor="DarkOrange"/>
+                                        <Button Clicked="Button_Clicked_Delete_User"  Text="Delete" Opacity="0.9" BackgroundColor="DarkRed"/>-->
                                     </StackLayout>
                                 </DataTemplate>
                             </context:SideActionBarCell.ContextTemplate>
