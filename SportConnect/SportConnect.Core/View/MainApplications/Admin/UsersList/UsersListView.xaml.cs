@@ -1,5 +1,4 @@
 ﻿using MvvmCross.Forms.Views;
-using SportConnect.Core.Model.User;
 using SportConnect.Core.ViewModels.MainApplications.Admin.UsersList;
 using Xamarin.Forms;
 

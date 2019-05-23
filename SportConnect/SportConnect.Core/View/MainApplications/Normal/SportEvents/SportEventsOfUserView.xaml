@@ -11,9 +11,27 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding SportEventList}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding EventName}"/>
+                                    <Label Text="{Binding EventDate}"/>
+                                    <Label Text="{Binding QuantityOfEventParticipantsDescription}"/>
+                                    <Label Text="{Binding SportEventManagerName}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding SportTypeName}"/>
+                                    <Label Text="{Binding ProposedEventSkillLevel}"/>
+                                    <Label Text="{Binding AddressDescription}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </mvx:MvxContentPage>

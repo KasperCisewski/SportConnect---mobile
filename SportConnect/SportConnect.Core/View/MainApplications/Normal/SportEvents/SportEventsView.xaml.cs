@@ -11,5 +11,10 @@ namespace SportConnect.Core.View.MainApplications.Normal.SportEvents
         {
             InitializeComponent();
         }
+
+        private void ListView_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            ViewModel.GoToSportEventView().GetAwaiter();
+        }
     }
 }

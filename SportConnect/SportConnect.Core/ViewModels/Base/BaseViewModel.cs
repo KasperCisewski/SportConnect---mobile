@@ -10,6 +10,10 @@ namespace SportConnect.Core.ViewModels.Base
 {
     public class BaseViewModel : MvxViewModel
     {
+        public BaseViewModel()
+        {
+
+        }
 
         [MvxInject]
         public IMvxNavigationService NavigationService { get; set; }
@@ -25,6 +29,10 @@ namespace SportConnect.Core.ViewModels.Base
     }
     public abstract class BaseViewModel<T> : BaseViewModel, IMvxViewModel<T>
     {
+        public BaseViewModel()
+        {
+
+        }
         public abstract void Prepare(T parameter);
     }
 }

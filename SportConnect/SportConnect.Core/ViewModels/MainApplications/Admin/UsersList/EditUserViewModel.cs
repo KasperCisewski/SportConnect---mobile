@@ -22,17 +22,12 @@ namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
         public EditUserViewModel(UserService userService)
         {
             _userService = userService;
-            FillEditFormForUser(_editUserModel.UserId).GetAwaiter();
         }
 
         public override void Prepare(EditUserModel editUserModel)
         {
             _editUserModel = editUserModel;
-        }
-
-        public override Task Initialize()
-        {
-            return Task.FromResult(0);
+            FillEditFormForUser(_editUserModel.UserId).GetAwaiter();
         }
 
         private async Task FillEditFormForUser(Guid userId)

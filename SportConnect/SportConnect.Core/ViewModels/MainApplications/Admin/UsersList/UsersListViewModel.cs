@@ -53,7 +53,10 @@ namespace SportConnect.Core.ViewModels.MainApplications.Admin.UsersList
                 };
             }
 
-            await NavigationService.Navigate<EditUserViewModel, EditUserModel>(editUserModel);
+            await NavigationService.Navigate<EditUserViewModel, EditUserModel>(new EditUserModel
+            {
+                UserId = UsersList.First().Id
+            });
         }
         public async Task DeleteUser()
         {

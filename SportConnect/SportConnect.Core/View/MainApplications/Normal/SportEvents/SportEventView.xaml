@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage
+             x:TypeArguments="sportEvent:SportEventViewModel"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:sportEvent="clr-namespace:SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents;assembly=SportConnect.Core"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:res="clr-namespace:SportConnect.Core.Resources.SportEventResources;assembly=SportConnect.Core"
+              xmlns:converters="clr-namespace:SportConnect.Core.Converters"
+             x:Class="SportConnect.Core.View.MainApplications.Normal.SportEvents.SportEventView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:NegateBooleanConverter x:Key="negateBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="settingsIcon.png"
+            Text="Settings"
+            Priority="0"
+            Order="Primary"
+            Command="{Binding ShowSettingsModule}"
+        />
+        <ToolbarItem
+            Icon="logout.png"
+            Text="Logout"
+            Priority="1"
+            Order="Primary"
+            Command="{Binding LogoutFromApp}"
+          />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding SportEventModel.EventName}"/>
+                <Label Text="{Binding SportEventModel.EventDate}"/>
+                <Label Text="{Binding SportEventModel.QuantityOfEventParticipantsDescription}"/>
+                <Label Text="{Binding SportEventModel.SportEventManagerName}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding SportEventModel.SportTypeName}"/>
+                <Label Text="{Binding SportEventModel.ProposedEventSkillLevel}"/>
+                <Label Text="{Binding SportEventModel.AddressDescription}"/>
+            </StackLayout>
+
+            <Button Text="Out" Command="{Binding OutFromEvent}" IsVisible="{Binding IsJoinedToEventInPast}" BackgroundColor="Red" VerticalOptions="EndAndExpand"/>
+            <Button Text="Join" Command="{Binding JoinToEvent}" IsVisible="{Binding IsJoinedToEventInPast,Converter={StaticResource negateBooleanConverter}}" BackgroundColor="Green" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</mvx:MvxContentPage>

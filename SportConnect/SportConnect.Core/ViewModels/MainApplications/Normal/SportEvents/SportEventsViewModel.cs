@@ -24,12 +24,18 @@ namespace SportConnect.Core.ViewModels.MainApplications.Normal.SportEvents
         }
 
         public ObservableCollection<SportEventModel> SportEventList { get; set; }
+        public SportEventModel SportEventSelected { get; set; }
         public IMvxAsyncCommand AddSportEvent =>
          new MvxAsyncCommand(async () =>
          {
              await NavigationService.Navigate<AddSportEventViewModel>();
          });
 
+        public async Task GoToSportEventView()
+        {
+            await NavigationService.Navigate<SportEventViewModel, SportEventModel>(SportEventSelected);
+        }
+        
         public async Task FillSportEventList()
         {
             var eventList = await _sportEventService.GetSportEventsAsync(new System.Guid());

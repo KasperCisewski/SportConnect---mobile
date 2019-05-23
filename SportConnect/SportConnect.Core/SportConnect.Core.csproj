@@ -158,6 +158,9 @@
         <EmbeddedResource Update="View\MainApplications\Normal\SportEvents\SportEventsView.xaml">
           <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>
+        <EmbeddedResource Update="View\MainApplications\Normal\SportEvents\SportEventView.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Data\Constant\" />
